@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:orientation="vertical"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/linearLayout1"
+    p1:minWidth="25px"
+    p1:minHeight="25px">
+    <RelativeLayout
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/relativeLayout1">
+        <TextView
+            p1:text="Student ID"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="180dp"
+            p1:layout_height="35.0dp"
+            p1:id="@+id/studentID"
+            p1:gravity="center_vertical" />
+        <EditText
+            p1:layout_width="180dp"
+            p1:layout_height="wrap_content"
+            p1:layout_toRightOf="@id/studentID"
+            p1:id="@+id/studentIDInput"
+            p1:layout_centerVertical="false"
+            p1:layout_alignWithParentIfMissing="false" />
+    </RelativeLayout>
+    <RelativeLayout
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/relativeLayout2">
+        <TextView
+            p1:text="Password"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="180dp"
+            p1:layout_height="35.0dp"
+            p1:id="@+id/password"
+            p1:gravity="center_vertical" />
+        <EditText
+            p1:layout_width="180dp"
+            p1:layout_height="wrap_content"
+            p1:layout_toRightOf="@id/password"
+            p1:id="@+id/passwordInput"
+            p1:layout_centerVertical="false"
+            p1:layout_alignWithParentIfMissing="false"
+            p1:password="true" />
+    </RelativeLayout>
+    <RelativeLayout
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/relativeLayout3">
+        <TextView
+            p1:text="ReEnter Password"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="180dp"
+            p1:layout_height="35.0dp"
+            p1:id="@+id/rePassword"
+            p1:gravity="center_vertical" />
+        <EditText
+            p1:layout_width="180dp"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/rePasswordInput"
+            p1:layout_alignWithParentIfMissing="false"
+            p1:layout_toRightOf="@id/rePassword"
+            p1:password="true" />
+    </RelativeLayout>
+    <Button
+        p1:text="Register Account"
+        p1:layout_width="180dp"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/registerAccountButton"
+        p1:layout_gravity="center" />
+</LinearLayout>
