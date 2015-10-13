@@ -60,11 +60,26 @@ namespace ConnectUTS
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f05000b
-			public const int createAccountButton = 2131034123;
+			// aapt resource value: 0x7f050011
+			public const int createAccountButton = 2131034129;
 			
 			// aapt resource value: 0x7f050000
 			public const int linearLayout1 = 2131034112;
+			
+			// aapt resource value: 0x7f05000f
+			public const int loginButton = 2131034127;
+			
+			// aapt resource value: 0x7f05000c
+			public const int loginIDInput = 2131034124;
+			
+			// aapt resource value: 0x7f05000b
+			public const int loginIDText = 2131034123;
+			
+			// aapt resource value: 0x7f05000e
+			public const int loginPasswordInput = 2131034126;
+			
+			// aapt resource value: 0x7f05000d
+			public const int loginPasswordText = 2131034125;
 			
 			// aapt resource value: 0x7f050005
 			public const int password = 2131034117;
@@ -90,14 +105,17 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f050007
 			public const int relativeLayout3 = 2131034119;
 			
+			// aapt resource value: 0x7f050010
+			public const int space1 = 2131034128;
+			
 			// aapt resource value: 0x7f050002
 			public const int studentID = 2131034114;
 			
 			// aapt resource value: 0x7f050003
 			public const int studentIDInput = 2131034115;
 			
-			// aapt resource value: 0x7f05000c
-			public const int testButton = 2131034124;
+			// aapt resource value: 0x7f050012
+			public const int testButton = 2131034130;
 			
 			static Id()
 			{
