@@ -4,6 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
 <<<<<<< HEAD
+<<<<<<< HEAD
     android:weightSum="100">
     <EditText
         android:id="@+id/txtID"
@@ -31,6 +32,9 @@
         android:textColorHint="@color/hint"
         android:textColor="#000"
         android:layout_gravity="center" />
+=======
+    android:background="@drawable/gradient_background">
+>>>>>>> origin/master
 =======
     android:background="@drawable/gradient_background">
 >>>>>>> origin/master

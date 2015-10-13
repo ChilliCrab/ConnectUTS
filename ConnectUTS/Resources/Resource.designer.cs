@@ -65,7 +65,11 @@ namespace ConnectUTS
 			
 			// aapt resource value: 0x7f020000
 <<<<<<< HEAD
+<<<<<<< HEAD
 			public const int edit_text_style = 2130837504;
+=======
+			public const int gradient_background = 2130837504;
+>>>>>>> origin/master
 =======
 			public const int gradient_background = 2130837504;
 >>>>>>> origin/master
