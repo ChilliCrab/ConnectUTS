@@ -69,11 +69,16 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
+<<<<<<< HEAD
     <AndroidResource Include="Resources\drawable-hdpi\edit_text_style.xml" />
     <AndroidResource Include="Resources\drawable-mdpi\edit_text_style.xml" />
     <AndroidResource Include="Resources\drawable-xhdpi\edit_text_style.xml" />
     <AndroidResource Include="Resources\drawable-xxhdpi\edit_text_style.xml" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\edit_text_style.xml" />
+=======
+    <AndroidResource Include="Resources\drawable\gradient_background.xml" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
+>>>>>>> origin/master
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -82,5 +87,6 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\drawable\" />
   </ItemGroup>
 </Project>
