@@ -11,7 +11,7 @@ using SQLite;
 
 namespace ConnectUTS
 {
-	[Activity (Label = "ConnectUTS", MainLauncher = true, Icon = "@drawable/ic_launcher")]
+	[Activity (Label = "ConnectUTS")]
 	public class MainActivity : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
