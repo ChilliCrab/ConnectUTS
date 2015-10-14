@@ -33,7 +33,7 @@ namespace ConnectUTS
 			TextView forgottenPassword = FindViewById<TextView> (Resource.Id.pwdRecoveryTxt);
 			Button facebookButton = FindViewById<Button> (Resource.Id.facebookButton);
 
-			// Set the font to "Din"
+			// Set the font to "Din Bold"
 			Typeface dinBold = Typeface.CreateFromAsset (this.Assets, "fonts/din-bold.ttf");
 
 			title.SetTypeface (dinBold, TypefaceStyle.Normal);
@@ -134,7 +134,7 @@ namespace ConnectUTS
 
 		private void SendToFacebook()
 		{
-			Android.Net.Uri uri = Android.Net.Uri.Parse("https://m.facebook.com/");
+			Android.Net.Uri uri = Android.Net.Uri.Parse("https://www.m.facebook.com/Connect-UTS-1486585674979293/");
 			Intent intent = Intent.CreateChooser(new Intent(Intent.ActionView, uri), "Open with");
 			StartActivity(intent);
 		}
