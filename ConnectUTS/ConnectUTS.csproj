@@ -76,6 +76,9 @@
     <AndroidResource Include="Resources\drawable\background_gradient.xml" />
     <AndroidResource Include="Resources\values\Styles.xml" />
     <AndroidResource Include="Resources\drawable\edit_text_style.xml" />
+    <AndroidResource Include="Resources\drawable\checked.xml" />
+    <AndroidResource Include="Resources\drawable\unchecked.xml" />
+    <AndroidResource Include="Resources\drawable\checkbox_style.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

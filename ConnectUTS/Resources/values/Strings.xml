@@ -16,5 +16,12 @@
 	<string name="confirm_password_hint">Confirm password</string>
 	<string name="name">Student Name</string>
 	<string name="nationality_hint">Nationality</string>
+	<string name="agree_tos">I agree to the Terms and Conditions</string>
 	<string name="submit">Submit</string>
+	<string name="cancel">Cancel</string>
+	<string name="account_exists">An account with this Student ID already exists.</string>
+	<string name="mismatched_passwords">The passwords you have entered do not match.</string>
+	<string name="account_created">Account created!</string>
+	<string name="required_fields">Please fill in all the fields.</string>
+	<string name="must_agree">You must agree to the Terms and Conditions to make an account.</string>
 </resources>
