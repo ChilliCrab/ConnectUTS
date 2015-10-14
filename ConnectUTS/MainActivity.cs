@@ -35,6 +35,9 @@ namespace ConnectUTS
 			Typeface dinBold = Typeface.CreateFromAsset(this.Assets, "fonts/din-bold.ttf");
 
 			title.SetTypeface(dinBold, TypefaceStyle.Normal);
+			loginButton.SetTypeface(dinBold, TypefaceStyle.Normal);
+			registerButton.SetTypeface(dinBold, TypefaceStyle.Normal);
+			testButton.SetTypeface(dinBold, TypefaceStyle.Normal);
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "account.db"));
