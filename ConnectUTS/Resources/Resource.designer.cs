@@ -207,6 +207,9 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f050001
 			public const int id_hint = 2131034113;
 			
+			// aapt resource value: 0x7f050006
+			public const int like_on_facebook = 2131034118;
+			
 			// aapt resource value: 0x7f050003
 			public const int log_in = 2131034115;
 			

@@ -30,6 +30,7 @@ namespace ConnectUTS
 			Button loginButton = FindViewById<Button> (Resource.Id.loginButton);
 			EditText loginIDInput = FindViewById<EditText> (Resource.Id.loginIDInput);
 			EditText loginPasswordInput = FindViewById<EditText> (Resource.Id.loginPasswordInput);
+			Button facebookButton = FindViewById<Button> (Resource.Id.facebookButton);
 
 			// Set the font to "Din"
 			Typeface dinBold = Typeface.CreateFromAsset(this.Assets, "fonts/din-bold.ttf");
