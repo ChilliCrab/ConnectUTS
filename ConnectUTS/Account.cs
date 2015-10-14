@@ -8,9 +8,13 @@ namespace ConnectUTS
 		public string StudentID { get; set; }
 		public string Password { get; set; }
 
+		public string StudentName { get; set; }
+		public string Nationality { get; set; }
+
+
 		public override string ToString ()
 		{
-			return string.Format ("[Account: StudentID={0}, Password={1}]", StudentID, Password);
+			return string.Format ("[Account: StudentID={0}, Password={1}, StudentName={2}, Nationality={3}]", StudentID, Password, StudentName, Nationality);
 		}
 	}
 }

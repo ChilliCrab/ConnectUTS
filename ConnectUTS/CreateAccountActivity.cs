@@ -21,16 +21,20 @@ namespace ConnectUTS
 		{
 			base.OnCreate (bundle);
 
-			SetContentView (Resource.Layout.CreateAccount);
+			SetContentView (Resource.Layout.RegisterScreen);
 
-			EditText studentIDInput = FindViewById<EditText> (Resource.Id.studentIDInput);
-			EditText passwordInput = FindViewById<EditText> (Resource.Id.passwordInput);
-			EditText rePasswordInput = FindViewById<EditText> (Resource.Id.rePasswordInput);
+			EditText studentIDInput = FindViewById<EditText> (Resource.Id.registerStudentIDInput);
+			EditText passwordInput = FindViewById<EditText> (Resource.Id.registerPasswordInput);
+			EditText rePasswordInput = FindViewById<EditText> (Resource.Id.registerRePasswordInput);
+			EditText nameInput = FindViewById<EditText> (Resource.Id.registerStudentNameInput);
+			EditText nationalityInput = FindViewById<EditText> (Resource.Id.registerNationalityInput);
 			Button registerAccountButton = FindViewById<Button> (Resource.Id.registerAccountButton);
 
 			string studentID = String.Empty;
 			string password = String.Empty;
 			string rePassword = String.Empty;
+			string name = String.Empty;
+			string nationality = String.Empty;
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "account.db"));
@@ -39,15 +43,10 @@ namespace ConnectUTS
 				studentID = studentIDInput.Text;
 				password = passwordInput.Text;
 				rePassword = rePasswordInput.Text;
-
-				if(String.IsNullOrWhiteSpace(studentID) || String.IsNullOrWhiteSpace(password) || String.IsNullOrWhiteSpace(rePassword))
-				{
-					var notFilledAlert = new AlertDialog.Builder(this);
-					notFilledAlert.SetMessage("Please fill the required field");
-					notFilledAlert.SetNegativeButton("OK", delegate{});
-					notFilledAlert.Show();
-				}
-				else
+				name = nameInput.Text;
+				nationality = nationalityInput.Text;
+				string[] input = {studentID, password, rePassword, name, nationality};
+				if(InputValidation.isFilled(input))
 				{
 					string message = "";
 					var result = accountDB.Query<Account>("SELECT * FROM Account WHERE StudentID = '" + studentID + "'");
@@ -66,15 +65,27 @@ namespace ConnectUTS
 							Account acc = new Account();
 							acc.StudentID = studentID;
 							acc.Password = password;
+							acc.StudentName = name;
+							acc.Nationality = nationality;
 							accountDB.Insert(acc);
 							message = "Account created";
 						}
 					}
 					var filledAlert = new AlertDialog.Builder(this);
 					filledAlert.SetMessage(message);
-					filledAlert.SetNegativeButton("OK", delegate{});
+					filledAlert.SetNegativeButton("OK", delegate{
+						var intent = new Intent(this, typeof(MainActivity));
+						//intent.PutExtra("Account ID", studentID);
+						StartActivity(intent);
+					});
 					filledAlert.Show();
-					
+				}
+				else
+				{
+					var notFilledAlert = new AlertDialog.Builder(this);
+					notFilledAlert.SetMessage("Please fill the required field");
+					notFilledAlert.SetNegativeButton("OK", delegate{});
+					notFilledAlert.Show();
 				}
 		
 			};

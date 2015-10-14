@@ -16,7 +16,7 @@
         android:layout_marginBottom="10dp"
         android:gravity="center" />
     <EditText
-        android:id="@+id/registerId"
+        android:id="@+id/registerStudentIDInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_style"
@@ -30,7 +30,7 @@
         android:textColor="#000"
         android:layout_gravity="center" />
     <EditText
-        android:id="@+id/registerPassword"
+        android:id="@+id/registerPasswordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_style"
@@ -45,7 +45,7 @@
         android:textColor="#000"
         android:layout_gravity="center" />
     <EditText
-        android:id="@+id/confirmPassword"
+        android:id="@+id/registerRePasswordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_style"
@@ -60,7 +60,7 @@
         android:textColor="#000"
         android:layout_gravity="center" />
     <EditText
-        android:id="@+id/registerName"
+        android:id="@+id/registerStudentNameInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_style"
@@ -75,22 +75,7 @@
         android:textColor="#000"
         android:layout_gravity="center" />
     <EditText
-        android:id="@+id/registerEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edit_text_style"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:inputType="text"
-        android:hint="UTS Student Email"
-        android:textSize="14sp"
-        android:textColorHint="@color/hint"
-        android:textColor="#000"
-        android:layout_gravity="center" />
-    <EditText
-        android:id="@+id/registerNationality"
+        android:id="@+id/registerNationalityInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_style"
@@ -105,7 +90,7 @@
         android:textColor="#000"
         android:layout_gravity="center" />
     <Button
-        android:id="@+id/submitBtn"
+        android:id="@+id/registerAccountButton"
         android:text="Submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -19,7 +19,7 @@
         android:layout_marginBottom="10dp"
         android:gravity="center" />
     <EditText
-        android:id="@+id/idField"
+        android:id="@+id/loginIDInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_style"
@@ -32,7 +32,7 @@
         android:textColor="#000"
         android:layout_gravity="center" />
     <EditText
-        android:id="@+id/pwdField"
+        android:id="@+id/loginPasswordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_style"
@@ -46,7 +46,7 @@
         android:textColor="#000"
         android:layout_gravity="center" />
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/loginButton"
         android:text="Log in"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
@@ -63,14 +63,31 @@
         android:gravity="center"
         android:layout_gravity="center" />
     <Button
-        android:id="@+id/registerBtn"
+        android:id="@+id/registerButton"
         android:text="Register"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:textSize="20dp"
         android:textColor="#fff"
         android:textStyle="bold"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:height="35dp"
+        android:background="#1B9AF7"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_gravity="center" />
+    <Button
+        android:id="@+id/testButton"
+        android:text="Check Database"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
