@@ -32,7 +32,7 @@ namespace ConnectUTS
 			EditText nationalityInput = FindViewById<EditText> (Resource.Id.registerNationalityInput);
 			CheckBox agreeTac = FindViewById<CheckBox> (Resource.Id.registerAgreeTac);
 			Button registerAccountButton = FindViewById<Button> (Resource.Id.registerAccountButton);
-			Button cancelButton = FindViewById<Button> (Resource.Id.registerCancelButton);
+			Button cancelButton = FindViewById<Button> (Resource.Id.cancelButton);
 
 			// Set up fonts.
 			Typeface din = Typeface.CreateFromAsset (this.Assets, "fonts/din-regular.ttf");
@@ -44,6 +44,7 @@ namespace ConnectUTS
 			// Set font to "Din Bold".
 			title.SetTypeface (dinBold, TypefaceStyle.Normal);
 			registerAccountButton.SetTypeface (dinBold, TypefaceStyle.Normal);
+			cancelButton.SetTypeface (dinBold, TypefaceStyle.Normal);
 
 			string studentID = String.Empty;
 			string password = String.Empty;
