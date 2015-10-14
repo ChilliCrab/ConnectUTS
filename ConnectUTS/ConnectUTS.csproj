@@ -53,6 +53,8 @@
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="Account.cs" />
+    <Compile Include="Login.cs" />
+    <Compile Include="Register.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -69,8 +71,15 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\layout\LoginScreen.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\edit_text_style.xml" />
+    <AndroidResource Include="Resources\drawable-mdpi\edit_text_style.xml" />
+    <AndroidResource Include="Resources\drawable-xhdpi\edit_text_style.xml" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\edit_text_style.xml" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\edit_text_style.xml" />
     <AndroidResource Include="Resources\values\Colors.xml" />
-    <AndroidResource Include="Resources\drawable\background_gradient.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\layout\RegisterScreen.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -79,11 +88,6 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
-    <Folder Include="Assets\fonts\" />
     <Folder Include="Resources\drawable\" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidAsset Include="Assets\fonts\din-bold.ttf" />
-    <AndroidAsset Include="Assets\fonts\din-regular.ttf" />
   </ItemGroup>
 </Project>
