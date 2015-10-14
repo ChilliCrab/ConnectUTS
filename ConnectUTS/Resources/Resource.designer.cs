@@ -85,6 +85,9 @@ namespace ConnectUTS
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f07001d
+			public const int confirmPassword = 2131165213;
+			
 			// aapt resource value: 0x7f070018
 			public const int createAccountButton = 2131165208;
 			
@@ -142,6 +145,24 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f07000f
 			public const int registerBtn = 2131165199;
 			
+			// aapt resource value: 0x7f07001f
+			public const int registerEmail = 2131165215;
+			
+			// aapt resource value: 0x7f07001a
+			public const int registerHeading = 2131165210;
+			
+			// aapt resource value: 0x7f07001b
+			public const int registerId = 2131165211;
+			
+			// aapt resource value: 0x7f07001e
+			public const int registerName = 2131165214;
+			
+			// aapt resource value: 0x7f070020
+			public const int registerNationality = 2131165216;
+			
+			// aapt resource value: 0x7f07001c
+			public const int registerPassword = 2131165212;
+			
 			// aapt resource value: 0x7f070001
 			public const int relativeLayout1 = 2131165185;
 			
@@ -159,6 +180,9 @@ namespace ConnectUTS
 			
 			// aapt resource value: 0x7f070003
 			public const int studentIDInput = 2131165187;
+			
+			// aapt resource value: 0x7f070021
+			public const int submitBtn = 2131165217;
 			
 			// aapt resource value: 0x7f070019
 			public const int testButton = 2131165209;
@@ -184,6 +208,9 @@ namespace ConnectUTS
 			
 			// aapt resource value: 0x7f030002
 			public const int Main = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int RegisterScreen = 2130903043;
 			
 			static Layout()
 			{

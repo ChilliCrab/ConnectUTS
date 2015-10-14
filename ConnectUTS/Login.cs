@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace ConnectUTS
 {
-	[Activity (Label = "Login", MainLauncher = true, Icon = "@drawable/ic_launcher", Theme = "noTitle")]			
+	[Activity (Label = "Login", MainLauncher = true, Icon = "@drawable/ic_launcher", Theme = "@style/noTitle")]			
 	public class Login : Activity
 	{
 		private EditText gIdField;

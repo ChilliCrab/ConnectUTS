@@ -54,6 +54,7 @@
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="Account.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="Register.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -78,6 +79,7 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\edit_text_style.xml" />
     <AndroidResource Include="Resources\values\Colors.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\layout\RegisterScreen.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

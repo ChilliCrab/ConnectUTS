@@ -15,7 +15,7 @@
         android:drawablePadding="-60dip"
         android:paddingLeft="80dip"
         android:paddingRight="40dip"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginBottom="10dp"
         android:gravity="center" />
     <EditText
