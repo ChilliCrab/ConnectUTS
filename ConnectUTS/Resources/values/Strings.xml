@@ -2,4 +2,6 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">ConnectUTS</string>
+	<string name="id_hint">UTS ID</string>
+	<string name="password_hint">Password</string>
 </resources>
