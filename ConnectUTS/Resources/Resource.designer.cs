@@ -143,7 +143,7 @@ namespace ConnectUTS
 			public const int registerAccountButton = 2131165205;
 			
 			// aapt resource value: 0x7f070014
-			public const int registerAgreeTos = 2131165204;
+			public const int registerAgreeTac = 2131165204;
 			
 			// aapt resource value: 0x7f070004
 			public const int registerButton = 2131165188;
@@ -223,7 +223,7 @@ namespace ConnectUTS
 			public const int account_exists = 2131034126;
 			
 			// aapt resource value: 0x7f05000b
-			public const int agree_tos = 2131034123;
+			public const int agree_tac = 2131034123;
 			
 			// aapt resource value: 0x7f050000
 			public const int app_name = 2131034112;
