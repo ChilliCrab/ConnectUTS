@@ -115,6 +115,12 @@ namespace ConnectUTS
 				dbAlert.SetNegativeButton("OK", delegate{});
 				dbAlert.Show();
 			};
+
+			facebookButton.Click += delegate
+			{
+				// Opens external Facebook page where users can like the UTS:Connect page.
+				SendToFacebook();
+			};
 			// database setup for testing
 //			var account = new Account ();
 //			account.StudentID = "12463170";
@@ -126,7 +132,12 @@ namespace ConnectUTS
 //			accountDB.Delete<Account>("12466666")
 		}
 
-
+		private void SendToFacebook()
+		{
+			Android.Net.Uri uri = Android.Net.Uri.Parse("https://m.facebook.com/");
+			Intent intent = Intent.CreateChooser(new Intent(Intent.ActionView, uri), "Open with");
+			StartActivity(intent);
+		}
 	}
 }
 
