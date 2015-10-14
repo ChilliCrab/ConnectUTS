@@ -82,10 +82,19 @@ namespace ConnectUTS
 			public const int background_gradient = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int edit_text_style = 2130837505;
+			public const int checkbox_style = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int ic_launcher = 2130837506;
+			public const int @checked = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int edit_text_style = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int ic_launcher = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int @unchecked = 2130837509;
 			
 			static Drawable()
 			{
@@ -99,6 +108,9 @@ namespace ConnectUTS
 		
 		public partial class Id
 		{
+			
+			// aapt resource value: 0x7f070016
+			public const int cancelButton = 2131165206;
 			
 			// aapt resource value: 0x7f07000d
 			public const int createAccountButton = 2131165197;
@@ -127,8 +139,11 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f070006
 			public const int pwdRecoveryTxt = 2131165190;
 			
+			// aapt resource value: 0x7f070015
+			public const int registerAccountButton = 2131165205;
+			
 			// aapt resource value: 0x7f070014
-			public const int registerAccountButton = 2131165204;
+			public const int registerAgreeTos = 2131165204;
 			
 			// aapt resource value: 0x7f070004
 			public const int registerButton = 2131165188;
@@ -198,11 +213,29 @@ namespace ConnectUTS
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f050007
+			public const int account = 2131034119;
+			
+			// aapt resource value: 0x7f050010
+			public const int account_created = 2131034128;
+			
+			// aapt resource value: 0x7f05000e
+			public const int account_exists = 2131034126;
+			
+			// aapt resource value: 0x7f05000b
+			public const int agree_tos = 2131034123;
+			
 			// aapt resource value: 0x7f050000
 			public const int app_name = 2131034112;
 			
+			// aapt resource value: 0x7f05000d
+			public const int cancel = 2131034125;
+			
 			// aapt resource value: 0x7f050005
 			public const int check_database = 2131034117;
+			
+			// aapt resource value: 0x7f050008
+			public const int confirm_password_hint = 2131034120;
 			
 			// aapt resource value: 0x7f050001
 			public const int id_hint = 2131034113;
@@ -213,11 +246,29 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f050003
 			public const int log_in = 2131034115;
 			
+			// aapt resource value: 0x7f05000f
+			public const int mismatched_passwords = 2131034127;
+			
+			// aapt resource value: 0x7f050012
+			public const int must_agree = 2131034130;
+			
+			// aapt resource value: 0x7f050009
+			public const int name = 2131034121;
+			
+			// aapt resource value: 0x7f05000a
+			public const int nationality_hint = 2131034122;
+			
 			// aapt resource value: 0x7f050002
 			public const int password_hint = 2131034114;
 			
 			// aapt resource value: 0x7f050004
 			public const int register = 2131034116;
+			
+			// aapt resource value: 0x7f050011
+			public const int required_fields = 2131034129;
+			
+			// aapt resource value: 0x7f05000c
+			public const int submit = 2131034124;
 			
 			static String()
 			{
