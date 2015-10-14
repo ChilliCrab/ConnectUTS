@@ -10,4 +10,11 @@
 	<string name="like_on_facebook">
 		<u>Like us on Facebook!</u>
 	</string>
+
+	<!-- Strings for the Regristration screen -->
+	<string name="account">Make an Account</string>
+	<string name="confirm_password_hint">Confirm password</string>
+	<string name="name">Student Name</string>
+	<string name="nationality_hint">Nationality</string>
+	<string name="submit">Submit</string>
 </resources>

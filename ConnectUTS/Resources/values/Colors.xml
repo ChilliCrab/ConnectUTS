@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-	<color name="lightBlue">#FF71DCFF</color>
+	<color name="lightBlue">#FF97E5FF</color>
 	<color name="blue">#FF61D8FF</color>
-	<color name="darkBlue">	#FF57C2E5</color>
+	<color name="darkBlue">	#FF33B9E5</color>
 	<color name="buttonBlue">#FF4A6EA9</color>
 	<color name="black">#FF040404</color>
 	<color name="white">#FFFAFAFA</color>

@@ -43,12 +43,12 @@
             android:layout_marginTop="12dp"
             android:textColorHint="@color/hint"
             android:textColor="@color/black"
-            android:fontFamily="sans-serif"
             android:layout_gravity="center" />
         <EditText
             android:id="@+id/loginPasswordInput"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
+            android:fontFamily="sans-serif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_style"

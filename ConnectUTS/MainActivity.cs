@@ -33,7 +33,7 @@ namespace ConnectUTS
 			TextView forgottenPassword = FindViewById<TextView> (Resource.Id.pwdRecoveryTxt);
 			Button facebookButton = FindViewById<Button> (Resource.Id.facebookButton);
 
-			// Set the font to "Din"
+			// Set the font to "Din Bold"
 			Typeface dinBold = Typeface.CreateFromAsset (this.Assets, "fonts/din-bold.ttf");
 
 			title.SetTypeface (dinBold, TypefaceStyle.Normal);

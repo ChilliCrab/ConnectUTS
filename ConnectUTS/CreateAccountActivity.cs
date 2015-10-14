@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Graphics;
 
 using SQLite;
 namespace ConnectUTS
@@ -23,12 +24,18 @@ namespace ConnectUTS
 
 			SetContentView (Resource.Layout.RegisterScreen);
 
+			TextView title = FindViewById<TextView> (Resource.Id.registerHeading);
 			EditText studentIDInput = FindViewById<EditText> (Resource.Id.registerStudentIDInput);
 			EditText passwordInput = FindViewById<EditText> (Resource.Id.registerPasswordInput);
 			EditText rePasswordInput = FindViewById<EditText> (Resource.Id.registerRePasswordInput);
 			EditText nameInput = FindViewById<EditText> (Resource.Id.registerStudentNameInput);
 			EditText nationalityInput = FindViewById<EditText> (Resource.Id.registerNationalityInput);
 			Button registerAccountButton = FindViewById<Button> (Resource.Id.registerAccountButton);
+
+			// Set the font to "Din Bold"
+			Typeface dinBold = Typeface.CreateFromAsset (this.Assets, "fonts/din-bold.ttf");
+
+			title.SetTypeface (dinBold, TypefaceStyle.Normal);
 
 			string studentID = String.Empty;
 			string password = String.Empty;
