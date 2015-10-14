@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-	<color name="lightBlue">#029DAF</color>
-	<color name="darkBlue">	#003E4F</color>
-	<color name="hint">			#a3a3a3</color>
+	<color name="lightBlue">#FF71DCFF</color>
+	<color name="blue">#FF61D8FF</color>
+	<color name="darkBlue">	#FF57C2E5</color>
+	<color name="hint">#a3a3a3</color>
 </resources>
