@@ -34,6 +34,7 @@
         android:id="@+id/registerPasswordInput"
         android:hint="@string/password_hint"
         android:inputType="textPassword"
+        android:fontFamily="sans-serif"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_style"
@@ -48,6 +49,7 @@
         android:id="@+id/registerRePasswordInput"
         android:hint="@string/confirm_password_hint"
         android:inputType="textPassword"
+        android:fontFamily="sans-serif"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/edit_text_style"
@@ -87,8 +89,8 @@
         android:textColor="@color/black"
         android:layout_gravity="center" />
     <CheckBox
-        android:id="@+id/registerAgreeTos"
-        android:text="@string/agree_tos"
+        android:id="@+id/registerAgreeTac"
+        android:text="@string/agree_tac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
