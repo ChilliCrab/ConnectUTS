@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Graphics;
 
 using SQLite;
 
@@ -23,11 +24,17 @@ namespace ConnectUTS
 
 			// Get our button from the layout resource,
 			// and attach an event to it
+			TextView title = FindViewById<TextView>(Resource.Id.introHeading);
 			Button registerButton = FindViewById<Button> (Resource.Id.registerButton);
 			Button testButton = FindViewById<Button> (Resource.Id.testButton);
 			Button loginButton = FindViewById<Button> (Resource.Id.loginButton);
 			EditText loginIDInput = FindViewById<EditText> (Resource.Id.loginIDInput);
 			EditText loginPasswordInput = FindViewById<EditText> (Resource.Id.loginPasswordInput);
+
+			// Set the font to "Din"
+			Typeface dinBold = Typeface.CreateFromAsset(this.Assets, "fonts/din-bold.ttf");
+
+			title.SetTypeface(dinBold, TypefaceStyle.Normal);
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "account.db"));

@@ -89,5 +89,10 @@
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Assets\fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\fonts\din-bold.ttf" />
+    <AndroidAsset Include="Assets\fonts\din-regular.ttf" />
   </ItemGroup>
 </Project>
