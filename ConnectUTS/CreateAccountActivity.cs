@@ -32,7 +32,7 @@ namespace ConnectUTS
 			EditText nationalityInput = FindViewById<EditText> (Resource.Id.registerNationalityInput);
 			CheckBox agreeTos = FindViewById<CheckBox> (Resource.Id.registerAgreeTos);
 			Button registerAccountButton = FindViewById<Button> (Resource.Id.registerAccountButton);
-			Button cancelButton = FindViewById<Button> (Resource.Id.cancelButton);
+			Button cancelButton = FindViewById<Button> (Resource.Id.registerCancelButton);
 
 			// Set up fonts.
 			Typeface din = Typeface.CreateFromAsset (this.Assets, "fonts/din-regular.ttf");
