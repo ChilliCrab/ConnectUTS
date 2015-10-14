@@ -111,7 +111,7 @@
         android:background="@color/buttonBlue"
         android:gravity="center" />
     <Button
-        android:id="@+id/cancelButton"
+        android:id="@+id/registerCancelButton"
         android:text="@string/cancel"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
