@@ -103,11 +103,11 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f07000d
 			public const int createAccountButton = 2131165197;
 			
+			// aapt resource value: 0x7f070007
+			public const int facebookButton = 2131165191;
+			
 			// aapt resource value: 0x7f070000
 			public const int introHeading = 2131165184;
-			
-			// aapt resource value: 0x7f070007
-			public const int likeUsTxt = 2131165191;
 			
 			// aapt resource value: 0x7f070003
 			public const int loginButton = 2131165187;
