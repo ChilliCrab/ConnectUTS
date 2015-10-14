@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="hello">Hello World, Click Me!</string>
+	<!-- Strings for the Log In screen. -->
 	<string name="app_name">ConnectUTS</string>
+	<string name="id_hint">UTS ID</string>
+	<string name="password_hint">Password</string>
+	<string name="log_in">Log In</string>
+	<string name="register">Register</string>
+	<string name="check_database">Check Database</string>
+	<string name="like_on_facebook">
+		<u>Like us on Facebook!</u>
+	</string>
 </resources>
