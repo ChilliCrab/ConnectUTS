@@ -14,7 +14,7 @@ using Android.Widget;
 using SQLite;
 namespace ConnectUTS
 {
-	[Activity (Label = "Create Account")]			
+	[Activity (Label = "Create Account", Theme = "@style/noTitle")]			
 	public class CreateAccountActivity : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
@@ -73,9 +73,8 @@ namespace ConnectUTS
 					}
 					var filledAlert = new AlertDialog.Builder(this);
 					filledAlert.SetMessage(message);
-					filledAlert.SetNegativeButton("OK", delegate{
+					filledAlert.SetNeutralButton("OK", delegate{
 						var intent = new Intent(this, typeof(MainActivity));
-						//intent.PutExtra("Account ID", studentID);
 						StartActivity(intent);
 					});
 					filledAlert.Show();

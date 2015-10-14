@@ -85,21 +85,31 @@ namespace ConnectUTS
 			{
 				var stuList = accountDB.Query<Account>("SELECT * FROM Account");
 				string message = "";
-				foreach (var stu in stuList)
+				if (stuList.Count != 0)
 				{
-					message += stu.StudentID + " " + stu.Password + " " + stu.Nationality + "\n";
+					foreach (var stu in stuList)
+					{
+						message += stu.StudentID + " " + stu.Password + " " + stu.Nationality + "\n";
+					}
+				}
+				else
+				{
+					message = "database is empty";
 				}
 				var dbAlert = new AlertDialog.Builder(this);
 				dbAlert.SetMessage(message);
 				dbAlert.SetNegativeButton("OK", delegate{});
 				dbAlert.Show();
 			};
+			// database setup for testing
 //			var account = new Account ();
 //			account.StudentID = "12463170";
 //			account.Password = "Test123";
 //			account.StudentName = "Po-Hao Chen";
 //			account.Nationality = "Taiwan";
 //			accountDB.Insert (account);
+//			accountDB.Delete<Account>("12463170");
+//			accountDB.Delete<Account>("12466666")
 		}
 
 
