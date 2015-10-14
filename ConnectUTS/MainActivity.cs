@@ -11,7 +11,7 @@ using SQLite;
 
 namespace ConnectUTS
 {
-	[Activity (Label = "ConnectUTS", MainLauncher = true, Icon = "@drawable/ic_launcher")]
+	[Activity (Label = "UTS: CONNECT", MainLauncher = true, Icon = "@drawable/ic_launcher", Theme = "@style/noTitle")]	
 	public class MainActivity : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
@@ -19,11 +19,11 @@ namespace ConnectUTS
 			base.OnCreate (bundle);
 
 			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
+			SetContentView (Resource.Layout.LoginScreen);
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button createAccountButton = FindViewById<Button> (Resource.Id.createAccountButton);
+			Button registerButton = FindViewById<Button> (Resource.Id.registerButton);
 			Button testButton = FindViewById<Button> (Resource.Id.testButton);
 			Button loginButton = FindViewById<Button> (Resource.Id.loginButton);
 			EditText loginIDInput = FindViewById<EditText> (Resource.Id.loginIDInput);
@@ -31,6 +31,7 @@ namespace ConnectUTS
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "account.db"));
+			//accountDB.Query<Account> ("DROP TABLE Account");
 			accountDB.CreateTable<Account> ();
 
 			string loginID = String.Empty;
@@ -41,11 +42,8 @@ namespace ConnectUTS
 				string message = "";
 				loginID = loginIDInput.Text;
 				loginPassword = loginPasswordInput.Text;
-				if (String.IsNullOrWhiteSpace(loginID) || String.IsNullOrWhiteSpace(loginPassword))
-				{
-					message = "Please fill in the detail";
-				}
-				else
+				string[] input = {loginID, loginPassword};
+				if (InputValidation.isFilled(input))
 				{
 					var stuList = accountDB.Query<Account>("SELECT * FROM Account WHERE StudentID = '" + loginID +"'");
 					if (stuList.Count == 0)
@@ -67,13 +65,17 @@ namespace ConnectUTS
 						}
 					}
 				}
+				else
+				{
+					message = "Please fill in the detail";
+				}
 				var loginAlert = new AlertDialog.Builder(this);
 				loginAlert.SetMessage(message);
 				loginAlert.SetNeutralButton("got it", delegate{});
 				loginAlert.Show();
 			};
 
-			createAccountButton.Click += (object sender, EventArgs e) => 
+			registerButton.Click += (object sender, EventArgs e) => 
 			{
 				var intent = new Intent(this, typeof(CreateAccountActivity));
 				StartActivity(intent);
@@ -85,18 +87,18 @@ namespace ConnectUTS
 				string message = "";
 				foreach (var stu in stuList)
 				{
-					message += stu.StudentID + " " + stu.Password +"\n";
+					message += stu.StudentID + " " + stu.Password + " " + stu.Nationality + "\n";
 				}
 				var dbAlert = new AlertDialog.Builder(this);
 				dbAlert.SetMessage(message);
 				dbAlert.SetNegativeButton("OK", delegate{});
 				dbAlert.Show();
 			};
-
-
 //			var account = new Account ();
 //			account.StudentID = "12463170";
 //			account.Password = "Test123";
+//			account.StudentName = "Po-Hao Chen";
+//			account.Nationality = "Taiwan";
 //			accountDB.Insert (account);
 		}
 
