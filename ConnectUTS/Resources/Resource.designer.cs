@@ -44,17 +44,23 @@ namespace ConnectUTS
 		public partial class Color
 		{
 			
+			// aapt resource value: 0x7f040003
+			public const int black = 2130968579;
+			
 			// aapt resource value: 0x7f040001
 			public const int blue = 2130968577;
 			
 			// aapt resource value: 0x7f040002
 			public const int darkBlue = 2130968578;
 			
-			// aapt resource value: 0x7f040003
-			public const int hint = 2130968579;
+			// aapt resource value: 0x7f040005
+			public const int hint = 2130968581;
 			
 			// aapt resource value: 0x7f040000
 			public const int lightBlue = 2130968576;
+			
+			// aapt resource value: 0x7f040004
+			public const int white = 2130968580;
 			
 			static Color()
 			{

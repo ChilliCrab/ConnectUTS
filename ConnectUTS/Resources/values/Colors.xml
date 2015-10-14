@@ -3,5 +3,7 @@
 	<color name="lightBlue">#FF71DCFF</color>
 	<color name="blue">#FF61D8FF</color>
 	<color name="darkBlue">	#FF57C2E5</color>
+	<color name="black">#FF040404</color>
+	<color name="white">#FFFAFAFA</color>
 	<color name="hint">#a3a3a3</color>
 </resources>
