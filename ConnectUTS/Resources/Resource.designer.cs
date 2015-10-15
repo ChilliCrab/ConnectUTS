@@ -2000,6 +2000,9 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f050012
 			public const int app_name = 2131034130;
 			
+			// aapt resource value: 0x7f05002a
+			public const int bed_title = 2131034154;
+			
 			// aapt resource value: 0x7f050022
 			public const int cancel = 2131034146;
 			
@@ -2008,6 +2011,12 @@ namespace ConnectUTS
 			
 			// aapt resource value: 0x7f05001d
 			public const int confirm_password_hint = 2131034141;
+			
+			// aapt resource value: 0x7f050029
+			public const int friends_title = 2131034153;
+			
+			// aapt resource value: 0x7f05002b
+			public const int housemate_title = 2131034155;
 			
 			// aapt resource value: 0x7f050013
 			public const int id_hint = 2131034131;
@@ -2050,6 +2059,12 @@ namespace ConnectUTS
 			
 			// aapt resource value: 0x7f050026
 			public const int required_fields = 2131034150;
+			
+			// aapt resource value: 0x7f05002c
+			public const int search_title = 2131034156;
+			
+			// aapt resource value: 0x7f05002d
+			public const int settings_title = 2131034157;
 			
 			// aapt resource value: 0x7f050011
 			public const int status_bar_notification_info_overflow = 2131034129;

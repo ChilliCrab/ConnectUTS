@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="240dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_gravity="left">
     <ListView
         android:id="@+id/menuList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="left"
         android:choiceMode="singleChoice"
         android:divider="@color/whiteDark"
         android:dividerHeight="1dp"

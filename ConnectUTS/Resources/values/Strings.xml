@@ -43,16 +43,17 @@
     </string-array>
 
     <!-- Strings for Find Friends screen -->
+    <string name="friends_title">Find Friends</string>
 
+    <!-- Strings for Find Bed screen -->
+    <string name="bed_title">Find a Bed</string>
 
-    <!-- Strings for Find Friends screen -->
+    <!-- Strings for Find Housemate screen -->
+    <string name="housemate_title">Find a Housemate</string>
 
+    <!-- Strings for Search Users screen -->
+    <string name="search_title">Search All Users</string>
 
-    <!-- Strings for Find Friends screen -->
-
-
-    <!-- Strings for Find Friends screen -->
-
-
-    <!-- Strings for Find Friends screen -->
+    <!-- Strings for Settings screen -->
+    <string name="settings_title">Settings</string>
 </resources>
