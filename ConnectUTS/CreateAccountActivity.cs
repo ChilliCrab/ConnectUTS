@@ -15,7 +15,7 @@ using Android.Graphics;
 using SQLite;
 namespace ConnectUTS
 {
-	[Activity (Label = "Create Account", Theme = "@style/noTitle")]			
+	[Activity (Label = "Create Account", Theme = "@style/ConnectUtsTheme")]			
 	public class CreateAccountActivity : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
