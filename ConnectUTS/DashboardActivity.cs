@@ -103,6 +103,8 @@ namespace ConnectUTS
 		private void InflateDashboard()
 		{
 			mDashboard = FindViewById<ListView> (Resource.Id.menuList);
+			mDashboardAdapter = ArrayAdapter<string>.CreateFromResource (this, Resource.Array.menu, Resource.Layout.DashboardRowLayout);
+
 			mDashboard.Adapter = mDashboardAdapter;
 
 			mDashboard.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
