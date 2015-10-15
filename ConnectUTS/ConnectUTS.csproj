@@ -63,7 +63,6 @@
     <Compile Include="DashboardActivity.cs" />
     <Compile Include="HelpingFunction.cs" />
     <Compile Include="DashboardToggle.cs" />
-
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
