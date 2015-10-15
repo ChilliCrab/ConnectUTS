@@ -73,8 +73,12 @@ namespace ConnectUTS
 						}
 						else
 						{
+							message = GetString(Resource.String.log_in_successful);
+
 							var intent = new Intent(this, typeof(DashboardActivity));
 							StartActivity(intent);
+							// Stops user from pressing back button to return.
+							Finish();
 						}
 					}
 				}
