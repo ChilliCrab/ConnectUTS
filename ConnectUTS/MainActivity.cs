@@ -103,7 +103,12 @@ namespace ConnectUTS
 				{
 					foreach (var stu in stuList)
 					{
-						message += stu.StudentID + " " + stu.Password + " " + stu.Nationality + "\n";
+						message += stu.StudentID + " " + stu.Password + " ";
+						string[] interest = HelpingFunction.convertStringToArray(stu.Interest);
+						foreach (string inter in interest)
+						{
+							message += inter + " ";
+						}
 					}
 				}
 				else
@@ -121,12 +126,14 @@ namespace ConnectUTS
 				// Opens external Facebook page where users can like the UTS:Connect page.
 				SendToFacebook();
 			};
-			// database setup for testing
+			 //database setup for testing
 //			var account = new Account ();
 //			account.StudentID = "12463170";
 //			account.Password = "Test123";
 //			account.StudentName = "Po-Hao Chen";
 //			account.Nationality = "Taiwan";
+//			string[] inter = { "test1", "test2", "test3" };
+//			account.Interest = HelpingFunction.convertArrayToString (inter);
 //			accountDB.Insert (account);
 //			accountDB.Delete<Account>("12463170");
 //			accountDB.Delete<Account>("12466666")
