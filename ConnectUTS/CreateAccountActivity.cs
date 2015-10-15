@@ -30,27 +30,28 @@ namespace ConnectUTS
 			EditText rePasswordInput = FindViewById<EditText> (Resource.Id.registerRePasswordInput);
 			EditText nameInput = FindViewById<EditText> (Resource.Id.registerStudentNameInput);
 			EditText nationalityInput = FindViewById<EditText> (Resource.Id.registerNationalityInput);
-			CheckBox agreeTos = FindViewById<CheckBox> (Resource.Id.registerAgreeTos);
+			CheckBox agreeTac = FindViewById<CheckBox> (Resource.Id.registerAgreeTac);
 			Button registerAccountButton = FindViewById<Button> (Resource.Id.registerAccountButton);
-			Button cancelButton = FindViewById<Button> (Resource.Id.registerCancelButton);
+			Button cancelButton = FindViewById<Button> (Resource.Id.cancelButton);
 
 			// Set up fonts.
 			Typeface din = Typeface.CreateFromAsset (this.Assets, "fonts/din-regular.ttf");
 			Typeface dinBold = Typeface.CreateFromAsset (this.Assets, "fonts/din-bold.ttf");
 
 			// Set font to "Din".
-			agreeTos.SetTypeface (din, TypefaceStyle.Normal);
+			agreeTac.SetTypeface (din, TypefaceStyle.Normal);
 
 			// Set font to "Din Bold".
 			title.SetTypeface (dinBold, TypefaceStyle.Normal);
 			registerAccountButton.SetTypeface (dinBold, TypefaceStyle.Normal);
+			cancelButton.SetTypeface (dinBold, TypefaceStyle.Normal);
 
 			string studentID = String.Empty;
 			string password = String.Empty;
 			string rePassword = String.Empty;
 			string name = String.Empty;
 			string nationality = String.Empty;
-			bool tos = false;
+			bool tac = false;
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "account.db"));
@@ -61,7 +62,7 @@ namespace ConnectUTS
 				rePassword = rePasswordInput.Text;
 				name = nameInput.Text;
 				nationality = nationalityInput.Text;
-				tos = agreeTos.Checked;
+				tac = agreeTac.Checked;
 
 				string[] input = {studentID, password, rePassword, name, nationality};
 
@@ -82,7 +83,7 @@ namespace ConnectUTS
 						DisplayUnsuccessfulAlert(message);
 					}
 
-					else if (!tos)
+					else if (!tac)
 					{
 						message = GetString(Resource.String.must_agree);
 						DisplayUnsuccessfulAlert(message);
