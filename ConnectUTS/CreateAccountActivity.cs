@@ -104,6 +104,8 @@ namespace ConnectUTS
 						successfulAlert.SetNeutralButton("OK", delegate{
 							var intent = new Intent(this, typeof(MainActivity));
 							StartActivity(intent);
+							// Stops user from pressing back button to return.
+							Finish();
 						});
 						successfulAlert.Show();
 					}

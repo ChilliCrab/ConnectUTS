@@ -32,13 +32,47 @@ namespace ConnectUTS
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.Dashboard);
-			mDrawerLayout = FindViewById<DrawerLayout> (Resource.Id.dashboardDrawer);
 
+			mDrawerLayout = FindViewById<DrawerLayout> (Resource.Id.dashboardDrawer);
 			mToolbar = FindViewById<SupportToolbar> (Resource.Id.toolbar);
 
+			// Sets up the toggle for the dashboard drawer.
 			mDashboardToggle = new DashboardToggle (this, mDrawerLayout, Resource.String.menu_title, mCurrentViewTitle);
+			mDrawerLayout.SetDrawerListener (mDashboardToggle);
 
+			// Displays the custom action bar.
 			DisplayToolbar (bundle);
+
+			mDashboardToggle.SyncState();
+
+			// Controls the dashboard.
+			InflateDashboard();
+		}
+
+		public override bool OnOptionsItemSelected(IMenuItem item)
+		{
+			mDashboardToggle.OnOptionsItemSelected(item);
+			return base.OnOptionsItemSelected(item);
+		}
+
+		protected override void OnSaveInstanceState(Bundle outState)
+		{
+			if (mDrawerLayout.IsDrawerOpen((int)GravityFlags.Left))
+			{
+				outState.PutString("DrawerState", "Opened");
+			}
+
+			else
+			{
+				outState.PutString("DrawerState", "Closed");
+			}
+
+			base.OnSaveInstanceState(outState);
+		}
+
+		protected override void OnPostCreate (Bundle savedInstanceState)
+		{
+			base.OnPostCreate (savedInstanceState);
 		}
 
 		private void DisplayToolbar(Bundle bundle)
@@ -64,6 +98,70 @@ namespace ConnectUTS
 			{
 				SupportActionBar.SetTitle(mCurrentViewTitle);
 			}
+		}
+
+		private void InflateDashboard()
+		{
+			mDashboard = FindViewById<ListView> (Resource.Id.menuList);
+			mDashboardAdapter = ArrayAdapter<string>.CreateFromResource (this, Resource.Array.menu, Resource.Layout.DashboardRowLayout);
+
+			mDashboard.Adapter = mDashboardAdapter;
+
+			mDashboard.ItemClick += (object sender, AdapterView.ItemClickEventArgs e) => {
+				switch (e.Position) {
+				case 0:
+					// Profile page
+					mCurrentViewTitle = Resource.String.app_name;
+					break;
+				case 1:
+					// Find friends
+					mCurrentViewTitle = Resource.String.friends_title;
+					break;
+				case 2:
+					// Find accommodation
+					mCurrentViewTitle = Resource.String.bed_title;
+					break;
+				case 3:
+					// Find a housemate
+					mCurrentViewTitle = Resource.String.housemate_title;
+					break;
+				case 4:
+					// Search all users
+					mCurrentViewTitle = Resource.String.search_title;
+					break;
+				case 5:
+					// Settings
+					mCurrentViewTitle = Resource.String.settings_title;
+					break;
+				case 6:
+					// Log Out
+					var intent = new Intent(this, typeof(MainActivity));
+					StartActivity(intent);
+					// Stops user from pressing back button to return.
+					Finish();
+					break;
+				}
+			};
+		}
+
+		// Sets the toolbar title, switches the views and closes the dashboard.
+		private void SetView(int fragmentResource, Fragment view, bool retainView)
+		{
+			mDashboardToggle.SetClosedTitle(mCurrentViewTitle);
+
+			mFragmentManager = FragmentManager.BeginTransaction ();
+			mFragmentManager.Replace (fragmentResource, view);
+
+			// If true, allows the user to return to that fragment.
+			// Otherwise it is destroyed.
+			if(retainView)
+			{
+				mFragmentManager.AddToBackStack(null);
+			}
+
+			mFragmentManager.Commit ();
+
+			mDrawerLayout.CloseDrawers ();
 		}
 	}
 }
