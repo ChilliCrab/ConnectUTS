@@ -12,7 +12,7 @@ using SQLite;
 
 namespace ConnectUTS
 {
-	[Activity (Label = "UTS: CONNECT", MainLauncher = true, Icon = "@drawable/ic_launcher", Theme = "@style/noTitle")]	
+	[Activity (Label = "ConnectUTS", MainLauncher = true, Icon = "@drawable/ic_launcher", Theme = "@style/ConnectUtsTheme")]	
 	public class MainActivity : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
@@ -62,20 +62,19 @@ namespace ConnectUTS
 					var stuList = accountDB.Query<Account>("SELECT * FROM Account WHERE StudentID = '" + loginID +"'");
 					if (stuList.Count == 0)
 					{
-						message = "Account not exist";
+						message = GetString(Resource.String.no_account);
 					}
 					else
 					{
 						var stu = stuList[0];
 						if (!stu.Password.Equals(loginPassword))
 						{
-							message = "Password incorrect";
+							message = GetString(Resource.String.password_incorrect);
 						}
 						else
 						{
-							message = "Login Success";
-							//var intent = new Intent(this, typeof());
-							//StartActivity(intent);
+							var intent = new Intent(this, typeof(DashboardActivity));
+							StartActivity(intent);
 						}
 					}
 				}
@@ -85,7 +84,7 @@ namespace ConnectUTS
 				}
 				var loginAlert = new AlertDialog.Builder(this);
 				loginAlert.SetMessage(message);
-				loginAlert.SetNeutralButton("got it", delegate{});
+				loginAlert.SetNeutralButton("OK", delegate{});
 				loginAlert.Show();
 			};
 

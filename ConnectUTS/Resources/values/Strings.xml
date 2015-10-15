@@ -11,6 +11,10 @@
 		<u>Like us on Facebook!</u>
 	</string>
 
+	<!-- Strings for the Log In screen -->
+	<string name="no_account">No account with this UTS ID exists. Please register or try again.</string>
+	<string name="password_incorrect">Incorrect password</string>
+
 	<!-- Strings for the Regristration screen -->
 	<string name="account">Make an Account</string>
 	<string name="confirm_password_hint">Confirm password</string>
@@ -24,4 +28,16 @@
 	<string name="account_created">Account created!</string>
 	<string name="required_fields">Please fill in all the fields.</string>
 	<string name="must_agree">You must agree to the Terms and Conditions to make an account.</string>
+
+	<!-- Strings for the Dashboard -->
+	<string name="menu_title">Menu</string>
+    <string-array name="menu">
+        <item name="menuProfile">My Profile</item>
+        <item name="menuFriends">Find Friends</item>
+        <item name="menuBed">Find a Bed</item>
+        <item name="menuHousemate">Find a Housemate</item>
+        <item name="menuSearch">Search Users</item>
+        <item name="menuSettings">Settings</item>
+        <item name="menuLogOut">Log Out</item>
+    </string-array>
 </resources>

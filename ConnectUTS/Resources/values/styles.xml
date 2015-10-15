@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <resources>
-	<style name="noTitle">
-    	<item name="android:windowNoTitle">true</item>
+	<style name="ConnectUtsTheme" parent="Theme.AppCompat.Light.NoActionBar">
+		<item name="drawerArrowStyle">@style/ConnectUtsDrawerArrowStyle</item>
   	</style>
+  	<style name="ConnectUtsDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/white</item>
+        <item name="spinBars">true</item>
+    </style>
 </resources>
