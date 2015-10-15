@@ -14,6 +14,7 @@
 	<!-- Strings for the Log In screen -->
 	<string name="no_account">No account with this UTS ID exists. Please register or try again.</string>
 	<string name="password_incorrect">Incorrect password</string>
+	<string name="log_in_successful">Log in successful. Redirecting...</string>
 
 	<!-- Strings for the Regristration screen -->
 	<string name="account">Make an Account</string>
@@ -40,4 +41,18 @@
         <item name="menuSettings">Settings</item>
         <item name="menuLogOut">Log Out</item>
     </string-array>
+
+    <!-- Strings for Find Friends screen -->
+
+
+    <!-- Strings for Find Friends screen -->
+
+
+    <!-- Strings for Find Friends screen -->
+
+
+    <!-- Strings for Find Friends screen -->
+
+
+    <!-- Strings for Find Friends screen -->
 </resources>
