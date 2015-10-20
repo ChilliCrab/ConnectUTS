@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#C2C2C2">
+    <LinearLayout
+        android:id="@+id/stuID"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center">
+        <EditText
+            android:id="@+id/profileId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:text="Student ID"
+            android:textColor="@color/black"
+            android:enabled="false" />
+        <EditText
+            android:id="@+id/profileIdInput"
+            android:inputType="number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            android:enabled="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/name"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/stuID">
+        <EditText
+            android:id="@+id/profileName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:text="@string/name"
+            android:textColor="@color/black"
+            android:enabled="false" />
+        <EditText
+            android:id="@+id/profileNameInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            android:enabled="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/nationality"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/name">
+        <EditText
+            android:id="@+id/profileNationality"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:text="@string/nationality_hint"
+            android:textColor="@color/black"
+            android:enabled="false" />
+        <EditText
+            android:id="@+id/profileNationalityInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            android:enabled="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/contactNumber"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/nationality">
+        <EditText
+            android:id="@+id/profileContact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:text="Contact Number"
+            android:textColor="@color/black"
+            android:enabled="false" />
+        <EditText
+            android:id="@+id/profileContactInput"
+            android:inputType="number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            android:enabled="false" />
+    </LinearLayout>
+    <Button
+        android:text="Edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/profileEditButton"
+        android:layout_below="@id/contactNumber" />
+</RelativeLayout>

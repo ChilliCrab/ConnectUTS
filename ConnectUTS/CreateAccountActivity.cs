@@ -94,9 +94,16 @@ namespace ConnectUTS
 						Account acc = new Account();
 						acc.StudentID = studentID;
 						acc.Password = password;
-						acc.StudentName = name;
-						acc.Nationality = nationality;
 						accountDB.Insert(acc);
+						Profile prof = new Profile();
+						prof.StudentID = studentID;
+						prof.StudentName = name;
+						prof.Nationality = nationality;
+						prof.ContactNumber = String.Empty;
+						prof.Degree = String.Empty;
+						prof.Interest = String.Empty;
+						prof.Year = String.Empty;
+						accountDB.Insert(prof);
 
 						var successfulAlert = new AlertDialog.Builder(this);
 
