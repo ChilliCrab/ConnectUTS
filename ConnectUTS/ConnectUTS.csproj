@@ -56,13 +56,15 @@
     <Compile Include="CreateAccountActivity.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
-    <Compile Include="Account.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="InputValidation.cs" />
     <Compile Include="EmptyClass.cs" />
     <Compile Include="DashboardActivity.cs" />
     <Compile Include="HelpingFunction.cs" />
     <Compile Include="DashboardToggle.cs" />
+    <Compile Include="Fragments\ProfilePageFragment.cs" />
+    <Compile Include="Classes\Account.cs" />
+    <Compile Include="Classes\Profile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -90,6 +92,7 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\layout\ProfilePageLayout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -100,6 +103,8 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
     <Folder Include="Resources\drawable\" />
     <Folder Include="Assets\fonts\" />
+    <Folder Include="Fragments\" />
+    <Folder Include="Classes\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\fonts\din-bold.ttf" />

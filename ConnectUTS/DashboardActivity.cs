@@ -112,6 +112,7 @@ namespace ConnectUTS
 				case 0:
 					// Profile page
 					mCurrentViewTitle = Resource.String.app_name;
+					SetView(Resource.Id.fragmentContainer, new ProfilePageFragment(), true);
 					break;
 				case 1:
 					// Find friends
