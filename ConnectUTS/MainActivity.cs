@@ -47,6 +47,7 @@ namespace ConnectUTS
 			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "account.db"));
 			//accountDB.Query<Account> ("DROP TABLE Account");
 			accountDB.CreateTable<Account> ();
+			accountDB.CreateTable<Profile> ();
 
 			string loginID = String.Empty;
 			string loginPassword = String.Empty;
@@ -101,18 +102,29 @@ namespace ConnectUTS
 			testButton.Click += (object sender, EventArgs e) => 
 			{
 				var stuList = accountDB.Query<Account>("SELECT * FROM Account");
+				var profList = accountDB.Query<Profile>("SELECT * FROM Profile");
 				string message = "";
 				if (stuList.Count != 0)
 				{
 					foreach (var stu in stuList)
 					{
-						message += stu.StudentID + " " + stu.Password + " ";
-						string[] interest = HelpingFunction.convertStringToArray(stu.Interest);
-						foreach (string inter in interest)
+						message += stu.StudentID + " " + stu.Password + "\n";
+//						string[] interest = HelpingFunction.convertStringToArray(stu.Interest);
+//						foreach (string inter in interest)
+//						{
+//							message += inter + " ";
+//						}
+					}
+					if (profList.Count != 0)
+					{
+						foreach (var prof in profList)
 						{
-							message += inter + " ";
+							message += prof.ContactNumber + " " + prof.Interest;
 						}
 					}
+					else
+						message += "profile db is empty";
+
 				}
 				else
 				{
@@ -133,11 +145,16 @@ namespace ConnectUTS
 //			var account = new Account ();
 //			account.StudentID = "12463170";
 //			account.Password = "Test123";
-//			account.StudentName = "Po-Hao Chen";
-//			account.Nationality = "Taiwan";
-//			string[] inter = { "test1", "test2", "test3" };
-//			account.Interest = HelpingFunction.convertArrayToString (inter);
+//			var profile = new Profile ();
+//			profile.StudentID = "12463170";
+//			profile.ContactNumber = "0433333333";
+//			profile.Degree = "B of Sc in IT";
+//			string[] inter = { "game", "another game" };
+//			profile.Interest = HelpingFunction.convertArrayToString (inter);
+//			profile.Nationality = "Taiwan";
+//
 //			accountDB.Insert (account);
+//			accountDB.Insert (profile);
 //			accountDB.Delete<Account>("12463170");
 //			accountDB.Delete<Account>("12466666")
 		}
