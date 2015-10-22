@@ -88,6 +88,15 @@
         android:textColorHint="@color/hint"
         android:textColor="@color/black"
         android:layout_gravity="center" />
+    <Spinner
+        android:id="@+id/registerInterest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/basic_interests"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="6dp" />
     <CheckBox
         android:id="@+id/registerAgreeTac"
         android:text="@string/agree_tac"

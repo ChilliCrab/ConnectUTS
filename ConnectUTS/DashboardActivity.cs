@@ -127,14 +127,10 @@ namespace ConnectUTS
 					mCurrentViewTitle = Resource.String.housemate_title;
 					break;
 				case 4:
-					// Search all users
-					mCurrentViewTitle = Resource.String.search_title;
-					break;
-				case 5:
 					// Settings
 					mCurrentViewTitle = Resource.String.settings_title;
 					break;
-				case 6:
+				case 5:
 					// Log Out
 					var intent = new Intent(this, typeof(MainActivity));
 					StartActivity(intent);
