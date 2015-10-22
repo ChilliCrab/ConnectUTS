@@ -67,6 +67,8 @@
     <Compile Include="Fragments\ProfilePageFragment.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\Profile.cs" />
+    <Compile Include="FriendAdapter.cs" />
+    <Compile Include="Fragments\FriendsFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -95,6 +97,8 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\layout\ProfilePageLayout.axml" />
+    <AndroidResource Include="Resources\layout\UsersRowLayout.axml" />
+    <AndroidResource Include="Resources\layout\Friends.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
