@@ -58,7 +58,8 @@
             android:layout_weight="50"
             android:background="@drawable/edit_text_style"
             android:textColor="@color/black"
-            android:enabled="false" />
+            android:enabled="false"
+            android:maxLines="1" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/nationality"
@@ -87,7 +88,8 @@
             android:layout_weight="50"
             android:background="@drawable/edit_text_style"
             android:textColor="@color/black"
-            android:enabled="false" />
+            android:enabled="false"
+            android:maxLines="1" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/contactNumber"
@@ -117,7 +119,8 @@
             android:layout_weight="50"
             android:background="@drawable/edit_text_style"
             android:textColor="@color/black"
-            android:enabled="false" />
+            android:enabled="false"
+            android:maxLines="1" />
     </LinearLayout>
     <Button
         android:text="Edit"
