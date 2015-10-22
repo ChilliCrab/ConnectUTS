@@ -30,6 +30,7 @@ namespace ConnectUTS
 			EditText rePasswordInput = FindViewById<EditText> (Resource.Id.registerRePasswordInput);
 			EditText nameInput = FindViewById<EditText> (Resource.Id.registerStudentNameInput);
 			EditText nationalityInput = FindViewById<EditText> (Resource.Id.registerNationalityInput);
+			Spinner basicInterest = FindViewById<Spinner> (Resource.Id.registerInterest);
 			CheckBox agreeTac = FindViewById<CheckBox> (Resource.Id.registerAgreeTac);
 			Button registerAccountButton = FindViewById<Button> (Resource.Id.registerAccountButton);
 			Button cancelButton = FindViewById<Button> (Resource.Id.cancelButton);
@@ -80,6 +81,12 @@ namespace ConnectUTS
 					else if (!password.Equals(rePassword))
 					{
 						message = GetString(Resource.String.mismatched_passwords);
+						DisplayUnsuccessfulAlert(message);
+					}
+
+					else if (basicInterest.SelectedItem.ToString()  == "Please select an interest...")
+					{
+						message = GetString(Resource.String.select_interest);
 						DisplayUnsuccessfulAlert(message);
 					}
 

@@ -16,7 +16,7 @@
 	<string name="password_incorrect">Incorrect password</string>
 	<string name="log_in_successful">Log in successful. Redirecting...</string>
 
-	<!-- Strings for the Regristration screen -->
+	<!-- Strings for the Registration screen -->
 	<string name="account">Make an Account</string>
 	<string name="confirm_password_hint">Confirm password</string>
 	<string name="name">Student Name</string>
@@ -26,9 +26,30 @@
 	<string name="cancel">Cancel</string>
 	<string name="account_exists">An account with this Student ID already exists.</string>
 	<string name="mismatched_passwords">The passwords you have entered do not match.</string>
+	<string name="select_interest">Please select your first interest.</string>
 	<string name="account_created">Account created!</string>
 	<string name="required_fields">Please fill in all the fields.</string>
 	<string name="must_agree">You must agree to the Terms and Conditions to make an account.</string>
+
+	<string-array name="basic_interests">
+		<item>Please select an interest...</item>
+		<item>Animals</item>
+		<item>Anime/Manga</item>
+		<item>Art</item>
+		<item>Cars</item>
+		<item>Cooking</item>
+		<item>Fashion</item>
+		<item>Games</item>
+		<item>Health</item>
+		<item>Movies</item>
+		<item>Music</item>
+		<item>Photography</item>
+		<item>Politics</item>
+		<item>Sports</item>
+		<item>Technology</item>
+		<item>Travel</item>
+		<item>TV</item>
+	</string-array>
 
 	<!-- Strings for the Dashboard -->
 	<string name="menu_title">Menu</string>
@@ -37,7 +58,6 @@
         <item name="menuFriends">Find Friends</item>
         <item name="menuBed">Find a Bed</item>
         <item name="menuHousemate">Find a Housemate</item>
-        <item name="menuSearch">Search Users</item>
         <item name="menuSettings">Settings</item>
         <item name="menuLogOut">Log Out</item>
     </string-array>
@@ -50,9 +70,6 @@
 
     <!-- Strings for Find Housemate screen -->
     <string name="housemate_title">Find a Housemate</string>
-
-    <!-- Strings for Search Users screen -->
-    <string name="search_title">Search All Users</string>
 
     <!-- Strings for Settings screen -->
     <string name="settings_title">Settings</string>
