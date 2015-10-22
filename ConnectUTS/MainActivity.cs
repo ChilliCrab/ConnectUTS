@@ -89,7 +89,6 @@ namespace ConnectUTS
 				}
 				var loginAlert = new AlertDialog.Builder(this);
 				loginAlert.SetMessage(message);
-				loginAlert.SetNeutralButton("OK", delegate{});
 				loginAlert.Show();
 			};
 
@@ -141,6 +140,7 @@ namespace ConnectUTS
 				// Opens external Facebook page where users can like the UTS:Connect page.
 				SendToFacebook();
 			};
+
 			 //database setup for testing
 //			var account = new Account ();
 //			account.StudentID = "12463170";
