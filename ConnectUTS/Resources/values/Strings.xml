@@ -62,6 +62,9 @@
         <item name="menuLogOut">Log Out</item>
     </string-array>
 
+    <!-- Strings for the action bar -->
+    <string name="search">Search</string>
+
     <!-- Strings for Find Friends screen -->
     <string name="friends_title">Find Friends</string>
 
