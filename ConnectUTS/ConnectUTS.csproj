@@ -67,6 +67,7 @@
     <Compile Include="SupportingClasses\DatabaseSetup.cs" />
     <Compile Include="SupportingClasses\HelpingFunction.cs" />
     <Compile Include="SupportingClasses\InputValidation.cs" />
+    <Compile Include="Activities\DatabaseActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -75,7 +76,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\layout\LoginScreen.axml" />
     <AndroidResource Include="Resources\values\Colors.xml" />
@@ -98,6 +98,7 @@
     <AndroidResource Include="Resources\layout\UsersRowLayout.axml" />
     <AndroidResource Include="Resources\layout\Friends.axml" />
     <AndroidResource Include="Resources\menu\ActionMenu.xml" />
+    <AndroidResource Include="Resources\layout\DatabaseScreen.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

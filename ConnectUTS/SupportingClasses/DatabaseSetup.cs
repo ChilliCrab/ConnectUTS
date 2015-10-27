@@ -155,39 +155,72 @@ namespace ConnectUTS
 			"4",
 			"2"};
 
-		public static void InitializeDatabase ()
+		public static string InitializeDatabase ()
 		{
-			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
-			var testingDatabase = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
-			testingDatabase.CreateTable<Account> ();
-			testingDatabase.CreateTable<Profile> ();
-			testingDatabase.CreateTable<Accommodation> ();
-			for (int i = 0; i < studentIDs.Length; i++) {
-				Account account = new Account ();
-				Profile profile = new Profile ();
-				Accommodation accom = new Accommodation ();
-				account.StudentID = studentIDs [i];
-				account.Password = passwords [i];
+			string message = "Database initatialization done";
+				string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+				var testingDatabase = new SQLiteConnection (System.IO.Path.Combine (path, "Database.db"));
+				testingDatabase.CreateTable<Account> ();
+				testingDatabase.CreateTable<Profile> ();
+				testingDatabase.CreateTable<Accommodation> ();
+			var stuList = testingDatabase.Query<Account> ("SELECT * FROM Account");
+			if (stuList.Count == 0) { 
+				for (int i = 0; i < studentIDs.Length; i++) {
+					Account account = new Account ();
+					Profile profile = new Profile ();
+					Accommodation accom = new Accommodation ();
+					account.StudentID = studentIDs [i];
+					account.Password = passwords [i];
 
-				profile.StudentID = studentIDs [i];
-				profile.StudentName = names [i];
-				profile.Nationality = nationalities [i];
-				profile.ContactNumber = contactNums [i];
-				profile.Degree = degrees [i];
-				profile.Interest = String.Empty;
-				profile.Year = years [i];
+					profile.StudentID = studentIDs [i];
+					profile.StudentName = names [i];
+					profile.Nationality = nationalities [i];
+					profile.ContactNumber = contactNums [i];
+					profile.Degree = degrees [i];
+					profile.Interest = String.Empty;
+					profile.Year = years [i];
 
-				accom.ID = i.ToString ();
-				accom.Address = String.Empty;
-				accom.Suburb = String.Empty;
-				accom.RentAWeek = String.Empty;
-				accom.PreferredContact = String.Empty;
-				accom.Description = String.Empty;
-				testingDatabase.Insert (account);
-				testingDatabase.Insert (accom);
-				testingDatabase.Insert (profile);
+					accom.ID = i.ToString ();
+					accom.Address = String.Empty;
+					accom.Suburb = String.Empty;
+					accom.RentAWeek = String.Empty;
+					accom.PreferredContact = String.Empty;
+					accom.Description = String.Empty;
+					testingDatabase.Insert (account);
+					testingDatabase.Insert (accom);
+					testingDatabase.Insert (profile);
+				}
+			} else {
+				message = "Database already set up";
 			}
+			return message;
+		}
 
+		public static string ResetDatabase()
+		{
+			string message = "Reset Done";
+			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+			var testingDatabase = new SQLiteConnection (System.IO.Path.Combine (path, "Database.db"));
+			testingDatabase.Query<Profile> ("DELETE FROM Profile");
+			testingDatabase.Query<Account> ("DELETE FROM Account");
+			testingDatabase.Query<Accommodation> ("DELETE FROM Accommodation");
+			return message;
+		}
+
+		public static string CheckDatabase()
+		{
+			string message = "";
+			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+			var testingDatabase = new SQLiteConnection (System.IO.Path.Combine (path, "Database.db"));
+			var stuList = testingDatabase.Query<Account> ("SELECT * FROM Account");
+			if (stuList.Count != 0) {
+
+				message = "there are " + stuList.Count.ToString () + " students registered";
+
+			} else {
+				message = "database is empty";
+			}
+			return message;
 		}
 	}
 }
