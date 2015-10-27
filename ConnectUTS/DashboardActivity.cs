@@ -26,6 +26,7 @@ namespace ConnectUTS
 		private ArrayAdapter mDashboardAdapter;
 		private ListView mDashboard;
 		private FragmentTransaction mFragmentManager;
+		private Fragment mFriends;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -35,6 +36,9 @@ namespace ConnectUTS
 
 			mDrawerLayout = FindViewById<DrawerLayout> (Resource.Id.dashboardDrawer);
 			mToolbar = FindViewById<SupportToolbar> (Resource.Id.toolbar);
+
+			// Set up the fragments
+			mFriends = new FriendsFragment();
 
 			// Sets up the toggle for the dashboard drawer.
 			mDashboardToggle = new DashboardToggle (this, mDrawerLayout, Resource.String.menu_title, mCurrentViewTitle);
@@ -117,6 +121,7 @@ namespace ConnectUTS
 				case 1:
 					// Find friends
 					mCurrentViewTitle = Resource.String.friends_title;
+					SetView(Resource.Id.fragmentContainer, mFriends, true);
 					break;
 				case 2:
 					// Find accommodation

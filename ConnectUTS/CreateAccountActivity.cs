@@ -108,7 +108,7 @@ namespace ConnectUTS
 						prof.Nationality = nationality;
 						prof.ContactNumber = String.Empty;
 						prof.Degree = String.Empty;
-						prof.Interest = String.Empty;
+						prof.Interest = basicInterest.SelectedItem.ToString();
 						prof.Year = String.Empty;
 						accountDB.Insert(prof);
 
