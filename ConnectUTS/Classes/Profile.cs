@@ -13,10 +13,11 @@ namespace ConnectUTS
 		public string Degree { get; set; }
 		public string Year { get; set; }
 		public string Interest { get; set; }
+		public string AccommodationID { get; set; }
 
 		public override string ToString ()
 		{
-			return string.Format ("[Profile: StudentID={0}, StudentName={1}, Nationality={2}, ContactNumber={3}, Degree={4}, Year={5}, Interest={6}]", StudentID, StudentName, Nationality, ContactNumber, Degree, Year, Interest);
+			return string.Format ("[Profile: StudentID={0}, StudentName={1}, Nationality={2}, ContactNumber={3}, Degree={4}, Year={5}, Interest={6}, AccommodationID={7}]", StudentID, StudentName, Nationality, ContactNumber, Degree, Year, Interest, AccommodationID);
 		}
 	}
 }

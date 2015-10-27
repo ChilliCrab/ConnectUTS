@@ -44,10 +44,8 @@ namespace ConnectUTS
 			facebookButton.SetTypeface (dinBold, TypefaceStyle.Normal);
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
-			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "account.db"));
-			//accountDB.Query<Account> ("DROP TABLE Account");
-			accountDB.CreateTable<Account> ();
-			accountDB.CreateTable<Profile> ();
+			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
+
 
 			string loginID = String.Empty;
 			string loginPassword = String.Empty;
@@ -105,24 +103,8 @@ namespace ConnectUTS
 				string message = "";
 				if (stuList.Count != 0)
 				{
-					foreach (var stu in stuList)
-					{
-						message += stu.StudentID + " " + stu.Password + "\n";
-//						string[] interest = HelpingFunction.convertStringToArray(stu.Interest);
-//						foreach (string inter in interest)
-//						{
-//							message += inter + " ";
-//						}
-					}
-					if (profList.Count != 0)
-					{
-						foreach (var prof in profList)
-						{
-							message += prof.ContactNumber + " " + prof.Interest;
-						}
-					}
-					else
-						message += "profile db is empty";
+					
+					message = "there are " + stuList.Count.ToString() + " students registered";
 
 				}
 				else
@@ -141,22 +123,8 @@ namespace ConnectUTS
 				SendToFacebook();
 			};
 
-			 //database setup for testing
-//			var account = new Account ();
-//			account.StudentID = "12463170";
-//			account.Password = "Test123";
-//			var profile = new Profile ();
-//			profile.StudentID = "12463170";
-//			profile.ContactNumber = "0433333333";
-//			profile.Degree = "B of Sc in IT";
-//			string[] inter = { "game", "another game" };
-//			profile.Interest = HelpingFunction.convertArrayToString (inter);
-//			profile.Nationality = "Taiwan";
-//
-//			accountDB.Insert (account);
-//			accountDB.Insert (profile);
-//			accountDB.Delete<Account>("12463170");
-//			accountDB.Delete<Account>("12466666")
+			// database set up
+			//DatabaseSetup.InitializeDatabase ();
 		}
 
 		private void SendToFacebook()

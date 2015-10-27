@@ -27,6 +27,7 @@ namespace ConnectUTS
 		private ListView mDashboard;
 		private FragmentTransaction mFragmentManager;
 		private Fragment mFriends;
+		private Fragment mProfile;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -38,6 +39,7 @@ namespace ConnectUTS
 			mToolbar = FindViewById<SupportToolbar> (Resource.Id.toolbar);
 
 			// Set up the fragments
+			mProfile = new ProfilePageFragment();
 			mFriends = new FriendsFragment();
 
 			// Sets up the toggle for the dashboard drawer.
@@ -116,10 +118,10 @@ namespace ConnectUTS
 				case 0:
 					// Profile page
 					mCurrentViewTitle = Resource.String.app_name;
-					SetView(Resource.Id.fragmentContainer, new ProfilePageFragment(), true);
+					SetView(Resource.Id.fragmentContainer, mProfile, true);
 					break;
 				case 1:
-					// Find friends
+					// Find friends - suggested users
 					mCurrentViewTitle = Resource.String.friends_title;
 					SetView(Resource.Id.fragmentContainer, mFriends, true);
 					break;

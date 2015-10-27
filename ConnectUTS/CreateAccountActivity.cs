@@ -55,7 +55,7 @@ namespace ConnectUTS
 			bool tac = false;
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
-			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "account.db"));
+			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
 
 			registerAccountButton.Click += (object sender, EventArgs e) => {
 				studentID = studentIDInput.Text;
