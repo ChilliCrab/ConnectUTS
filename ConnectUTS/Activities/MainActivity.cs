@@ -43,6 +43,7 @@ namespace ConnectUTS
 			forgottenPassword.SetTypeface (dinBold, TypefaceStyle.Normal);
 			facebookButton.SetTypeface (dinBold, TypefaceStyle.Normal);
 
+			// local database connection
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
 
@@ -75,6 +76,7 @@ namespace ConnectUTS
 							message = GetString(Resource.String.log_in_successful);
 
 							var intent = new Intent(this, typeof(DashboardActivity));
+							intent.PutExtra("studentID", loginID);
 							StartActivity(intent);
 							// Stops user from pressing back button to return.
 							Finish();
@@ -99,7 +101,6 @@ namespace ConnectUTS
 			testButton.Click += (object sender, EventArgs e) => 
 			{
 				var stuList = accountDB.Query<Account>("SELECT * FROM Account");
-				var profList = accountDB.Query<Profile>("SELECT * FROM Profile");
 				string message = "";
 				if (stuList.Count != 0)
 				{

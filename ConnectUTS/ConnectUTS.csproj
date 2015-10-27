@@ -50,16 +50,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CreateAccountActivity.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
-    <Compile Include="Login.cs" />
-    <Compile Include="InputValidation.cs" />
-    <Compile Include="DashboardActivity.cs" />
-    <Compile Include="HelpingFunction.cs" />
     <Compile Include="DashboardToggle.cs" />
     <Compile Include="Fragments\ProfilePageFragment.cs" />
     <Compile Include="Classes\Account.cs" />
@@ -67,7 +61,12 @@
     <Compile Include="FriendAdapter.cs" />
     <Compile Include="Fragments\FriendsFragment.cs" />
     <Compile Include="Classes\Accommodation.cs" />
-    <Compile Include="DatabaseSetup.cs" />
+    <Compile Include="Activities\CreateAccountActivity.cs" />
+    <Compile Include="Activities\DashboardActivity.cs" />
+    <Compile Include="Activities\MainActivity.cs" />
+    <Compile Include="SupportingClasses\DatabaseSetup.cs" />
+    <Compile Include="SupportingClasses\HelpingFunction.cs" />
+    <Compile Include="SupportingClasses\InputValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -98,6 +97,7 @@
     <AndroidResource Include="Resources\layout\ProfilePageLayout.axml" />
     <AndroidResource Include="Resources\layout\UsersRowLayout.axml" />
     <AndroidResource Include="Resources\layout\Friends.axml" />
+    <AndroidResource Include="Resources\menu\ActionMenu.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
@@ -110,6 +110,9 @@
     <Folder Include="Assets\fonts\" />
     <Folder Include="Fragments\" />
     <Folder Include="Classes\" />
+    <Folder Include="Resources\menu\" />
+    <Folder Include="Activities\" />
+    <Folder Include="SupportingClasses\" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\fonts\din-bold.ttf" />
