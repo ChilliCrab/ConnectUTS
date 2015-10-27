@@ -75,6 +75,7 @@ namespace ConnectUTS
 							message = GetString(Resource.String.log_in_successful);
 
 							var intent = new Intent(this, typeof(DashboardActivity));
+							intent.PutExtra("studentID", loginID);
 							StartActivity(intent);
 							// Stops user from pressing back button to return.
 							Finish();
@@ -99,7 +100,6 @@ namespace ConnectUTS
 			testButton.Click += (object sender, EventArgs e) => 
 			{
 				var stuList = accountDB.Query<Account>("SELECT * FROM Account");
-				var profList = accountDB.Query<Profile>("SELECT * FROM Profile");
 				string message = "";
 				if (stuList.Count != 0)
 				{

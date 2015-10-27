@@ -28,12 +28,15 @@ namespace ConnectUTS
 		private FragmentTransaction mFragmentManager;
 		private Fragment mFriends;
 		private Fragment mProfile;
+		private string studentID = String.Empty;
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
 			SetContentView (Resource.Layout.Dashboard);
+
+			studentID = Intent.Extras.GetString ("studentID");
 
 			mDrawerLayout = FindViewById<DrawerLayout> (Resource.Id.dashboardDrawer);
 			mToolbar = FindViewById<SupportToolbar> (Resource.Id.toolbar);
@@ -53,6 +56,10 @@ namespace ConnectUTS
 
 			// Controls the dashboard.
 			InflateDashboard();
+			var dbAlert = new Android.App.AlertDialog.Builder(this);
+			dbAlert.SetMessage(studentID);
+			dbAlert.SetNegativeButton("OK", delegate{});
+			dbAlert.Show();
 		}
 
 		public override bool OnOptionsItemSelected(IMenuItem item)
@@ -118,6 +125,9 @@ namespace ConnectUTS
 				case 0:
 					// Profile page
 					mCurrentViewTitle = Resource.String.app_name;
+					Bundle bundle = new Bundle();
+					bundle.PutString("studentID", studentID);
+					mProfile.Arguments = bundle;
 					SetView(Resource.Id.fragmentContainer, mProfile, true);
 					break;
 				case 1:
