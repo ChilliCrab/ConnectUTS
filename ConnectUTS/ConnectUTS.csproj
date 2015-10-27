@@ -60,7 +60,6 @@
     <Compile Include="SQLiteAsync.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="InputValidation.cs" />
-    <Compile Include="EmptyClass.cs" />
     <Compile Include="DashboardActivity.cs" />
     <Compile Include="HelpingFunction.cs" />
     <Compile Include="DashboardToggle.cs" />
@@ -69,6 +68,8 @@
     <Compile Include="Classes\Profile.cs" />
     <Compile Include="FriendAdapter.cs" />
     <Compile Include="Fragments\FriendsFragment.cs" />
+    <Compile Include="Classes\Accommodation.cs" />
+    <Compile Include="DatabaseSetup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
