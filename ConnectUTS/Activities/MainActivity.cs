@@ -43,6 +43,7 @@ namespace ConnectUTS
 			forgottenPassword.SetTypeface (dinBold, TypefaceStyle.Normal);
 			facebookButton.SetTypeface (dinBold, TypefaceStyle.Normal);
 
+			// local database connection
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
 
