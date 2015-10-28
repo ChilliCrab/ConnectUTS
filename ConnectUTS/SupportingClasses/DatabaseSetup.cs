@@ -179,6 +179,7 @@ namespace ConnectUTS
 					profile.Degree = degrees [i];
 					profile.Interest = String.Empty;
 					profile.Year = years [i];
+					profile.AccommodationID = i.ToString ();
 
 					accom.ID = i.ToString ();
 					accom.Address = String.Empty;

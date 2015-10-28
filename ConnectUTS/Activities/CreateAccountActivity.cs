@@ -99,10 +99,14 @@ namespace ConnectUTS
 					else
 					{
 						Account acc = new Account();
+						Profile prof = new Profile();
+						Accommodation accom = new Accommodation();
+						var accomList = accountDB.Query<Account> ("SELECT * FROM Accommodation");
+
 						acc.StudentID = studentID;
 						acc.Password = password;
 						accountDB.Insert(acc);
-						Profile prof = new Profile();
+
 						prof.StudentID = studentID;
 						prof.StudentName = name;
 						prof.Nationality = nationality;
@@ -110,7 +114,16 @@ namespace ConnectUTS
 						prof.Degree = String.Empty;
 						prof.Interest = basicInterest.SelectedItem.ToString();
 						prof.Year = String.Empty;
+						prof.AccommodationID = accomList.Count.ToString();
 						accountDB.Insert(prof);
+
+						accom.ID = accomList.Count.ToString();
+						accom.Address = String.Empty;
+						accom.Suburb = String.Empty;
+						accom.RentAWeek = String.Empty;
+						accom.PreferredContact = String.Empty;
+						accom.Description = String.Empty;
+						accountDB.Insert(accom);
 
 						var successfulAlert = new AlertDialog.Builder(this);
 
