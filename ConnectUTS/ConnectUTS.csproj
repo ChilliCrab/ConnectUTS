@@ -16,6 +16,8 @@
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>ConnectUTS</AssemblyName>
     <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,10 +45,10 @@
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
     <Reference Include="Xamarin.Android.Support.v4">
-      <HintPath>..\packages\Xamarin.Android.Support.v4.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+      <HintPath>packages\Xamarin.Android.Support.v4.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
-      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+      <HintPath>packages\Xamarin.Android.Support.v7.AppCompat.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -58,8 +60,8 @@
     <Compile Include="Fragments\ProfilePageFragment.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\Profile.cs" />
-    <Compile Include="FriendAdapter.cs" />
     <Compile Include="Fragments\FriendsFragment.cs" />
+    <Compile Include="FriendAdapter.cs" />
     <Compile Include="Classes\Accommodation.cs" />
     <Compile Include="Activities\CreateAccountActivity.cs" />
     <Compile Include="Activities\DashboardActivity.cs" />
@@ -95,8 +97,9 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\layout\ProfilePageLayout.axml" />
-    <AndroidResource Include="Resources\layout\UsersRowLayout.axml" />
     <AndroidResource Include="Resources\layout\Friends.axml" />
+    <AndroidResource Include="Resources\layout\UsersRowLayout.axml" />
+    <AndroidResource Include="Resources\layout\FindHousemateLayout.axml" />
     <AndroidResource Include="Resources\menu\ActionMenu.xml" />
     <AndroidResource Include="Resources\layout\DatabaseScreen.axml" />
   </ItemGroup>
