@@ -43,6 +43,7 @@ namespace ConnectUTS
 			forgottenPassword.SetTypeface (dinBold, TypefaceStyle.Normal);
 			facebookButton.SetTypeface (dinBold, TypefaceStyle.Normal);
 
+			// local database connection
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
 
@@ -99,22 +100,8 @@ namespace ConnectUTS
 
 			testButton.Click += (object sender, EventArgs e) => 
 			{
-				var stuList = accountDB.Query<Account>("SELECT * FROM Account");
-				string message = "";
-				if (stuList.Count != 0)
-				{
-					
-					message = "there are " + stuList.Count.ToString() + " students registered";
-
-				}
-				else
-				{
-					message = "database is empty";
-				}
-				var dbAlert = new AlertDialog.Builder(this);
-				dbAlert.SetMessage(message);
-				dbAlert.SetNegativeButton("OK", delegate{});
-				dbAlert.Show();
+					var intent = new Intent(this, typeof(DatabaseActivity));
+					StartActivity(intent);
 			};
 
 			facebookButton.Click += delegate

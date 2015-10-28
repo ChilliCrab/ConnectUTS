@@ -6,7 +6,7 @@
 	<string name="password_hint">Password</string>
 	<string name="log_in">Log In</string>
 	<string name="register">Register</string>
-	<string name="check_database">Check Database</string>
+	<string name="check_database">Database functions</string>
 	<string name="like_on_facebook">
 		<u>Like us on Facebook!</u>
 	</string>
