@@ -70,6 +70,7 @@
 
     <!-- Strings for Find Housemate screen -->
     <string name="housemate_title">Find a Housemate</string>
+   	
 
     <!-- Strings for Settings screen -->
     <string name="settings_title">Settings</string>
