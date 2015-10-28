@@ -6,7 +6,7 @@
 	<string name="password_hint">Password</string>
 	<string name="log_in">Log In</string>
 	<string name="register">Register</string>
-	<string name="check_database">Check Database</string>
+	<string name="check_database">Database functions</string>
 	<string name="like_on_facebook">
 		<u>Like us on Facebook!</u>
 	</string>
@@ -61,6 +61,9 @@
         <item name="menuSettings">Settings</item>
         <item name="menuLogOut">Log Out</item>
     </string-array>
+
+    <!-- Strings for the action bar -->
+    <string name="search">Search</string>
 
     <!-- Strings for Find Friends screen -->
     <string name="friends_title">Find Friends</string>

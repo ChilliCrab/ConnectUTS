@@ -28,6 +28,8 @@ namespace ConnectUTS
 		Button profileEditButton;
 		SQLiteConnection accountDB;
 		string mode = "Confirmed";
+		string studentID = "";
+		List<Profile> prof = null;
 		//Account acc;
 
 		public override void OnCreate (Bundle savedInstanceState)
@@ -52,8 +54,7 @@ namespace ConnectUTS
 			// Use this to return your custom view for this Fragment
 
 
-			// return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-
+			studentID = Arguments.GetString ("studentID");
 
 			View view = inflater.Inflate(Resource.Layout.ProfilePageLayout, container, false);
 			profileIdInput = view.FindViewById<EditText>(Resource.Id.profileIdInput);
@@ -66,15 +67,16 @@ namespace ConnectUTS
 			profileEditButton = view.FindViewById<Button> (Resource.Id.profileEditButton);
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
-			accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "account.db"));
+			accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
 			//acc = accountDB.Query<Account>("SELECT * FROM Account WHERE StudentID = '12463170'");
-			var prof = accountDB.Query<Profile>("SELECT * FROM Profile WHERE StudentID = '12463170'");
+			prof = accountDB.Query<Profile>("SELECT * FROM Profile WHERE StudentID = '" + studentID + "'");
 
 			profileIdInput.Text = prof[0].StudentID;
-			prof [0].StudentName = "Po-Hao Chen";
 			profileNameInput.Text = prof[0].StudentName;
 			profileNationalityInput.Text = prof[0].Nationality;
-			profileContactNumberInput.Text = prof[0].ContactNumber;	
+			profileContactNumberInput.Text = prof[0].ContactNumber;
+//			profileDegreeInput.Text = prof [0].Degree;
+//			profileYearInput.Text = prof [0].Year;
 
 			profileEditButton.Click += (sender, e) => {
 				switch(mode)
@@ -88,6 +90,10 @@ namespace ConnectUTS
 					mode = "Confirmed";
 					changeEdittable(false);
 					profileEditButton.Text = "Edit";
+					accountDB.Query<Profile>("UPDATE Profile SET StudentName = '" + profileNameInput.Text + "' WHERE StudentID = '" + studentID + "'");
+					accountDB.Query<Profile>("UPDATE Profile SET Nationality = '" + profileNationalityInput.Text + "' WHERE StudentID = '" + studentID + "'");
+					accountDB.Query<Profile>("UPDATE Profile SET ContactNumber = '" + profileContactNumberInput.Text + "' WHERE StudentID = '" + studentID + "'");
+
 					break;
 				}
 
