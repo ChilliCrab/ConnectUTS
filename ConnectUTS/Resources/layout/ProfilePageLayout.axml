@@ -58,7 +58,6 @@
             android:enabled="false" />
         <EditText
             android:id="@+id/profileNameInput"
-            android:maxLines="1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="50"
@@ -97,8 +96,7 @@
             android:maxLines="1"
             android:background="@drawable/edit_text_style"
             android:textColor="@color/black"
-            android:enabled="false"
-            android:maxLines="1" />
+            android:enabled="false" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/contactNumber"
@@ -127,7 +125,6 @@
             android:inputType="number"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
             android:layout_weight="50"
             android:background="@drawable/edit_text_style"
             android:textColor="@color/black"
