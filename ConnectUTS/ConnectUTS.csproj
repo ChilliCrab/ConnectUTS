@@ -61,9 +61,7 @@
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\Profile.cs" />
     <Compile Include="Fragments\FriendsFragment.cs" />
-<<<<<<< HEAD
     <Compile Include="FriendAdapter.cs" />
-=======
     <Compile Include="Classes\Accommodation.cs" />
     <Compile Include="Activities\CreateAccountActivity.cs" />
     <Compile Include="Activities\DashboardActivity.cs" />
@@ -72,7 +70,6 @@
     <Compile Include="SupportingClasses\HelpingFunction.cs" />
     <Compile Include="SupportingClasses\InputValidation.cs" />
     <Compile Include="Activities\DatabaseActivity.cs" />
->>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -101,13 +98,10 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\layout\ProfilePageLayout.axml" />
     <AndroidResource Include="Resources\layout\Friends.axml" />
-<<<<<<< HEAD
     <AndroidResource Include="Resources\layout\UsersRowLayout.axml" />
     <AndroidResource Include="Resources\layout\FindHousemateLayout.axml" />
-=======
     <AndroidResource Include="Resources\menu\ActionMenu.xml" />
     <AndroidResource Include="Resources\layout\DatabaseScreen.axml" />
->>>>>>> origin/master
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
