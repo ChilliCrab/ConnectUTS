@@ -70,7 +70,8 @@
             android:background="@drawable/edit_text_style"
             android:textColor="@color/black"
             android:scrollHorizontally="true"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:enabled="false" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/housemate2"
@@ -91,8 +92,7 @@
             android:text="Suburb"
             android:textColor="@color/black"
             android:gravity="center_vertical"
-            android:textSize="20sp"
-            android:enabled="false" />
+            android:textSize="20sp" />
         <EditText
             android:id="@+id/housemateSuburbInput"
             android:layout_width="fill_parent"
@@ -119,7 +119,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:text="Rent"
+            android:text="Rent per week"
             android:gravity="center_vertical"
             android:textSize="20sp"
             android:textColor="@color/black" />
@@ -131,7 +131,8 @@
             android:layout_weight="50"
             android:background="@drawable/edit_text_style"
             android:textColor="@color/black"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:enabled="false" />
     </LinearLayout>
     <LinearLayout
         android:id="@+id/housemate4"
@@ -149,7 +150,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="50"
-            android:text="Contact Number"
+            android:text="Preferred Contact"
             android:gravity="center_vertical"
             android:textSize="20sp"
             android:textColor="@color/black" />
@@ -161,7 +162,8 @@
             android:layout_weight="50"
             android:background="@drawable/edit_text_style"
             android:textColor="@color/black"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:enabled="false" />
     </LinearLayout>
     <TextView
         android:id="@+id/housemateDescription"
@@ -188,15 +190,16 @@
         android:layout_marginTop="2dp"
         android:maxLines="4"
         android:minLines="4"
-        android:layout_below="@id/housemateDescription" />
+        android:layout_below="@id/housemateDescription"
+        android:enabled="false" />
     <Button
-        android:text="Submit"
+        android:text="Edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
         android:background="@color/buttonBlue"
-        android:id="@+id/housemateSubmitButton"
+        android:id="@+id/housemateEditButton"
         android:layout_below="@id/housemateDescriptionInput" />
 </RelativeLayout>
