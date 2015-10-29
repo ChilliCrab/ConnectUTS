@@ -21,10 +21,10 @@ namespace ConnectUTS
 {
 	public class FriendsFragment : Fragment
 	{
-		private List<Profile> mUsers;
+		private List<Accommodation> mListings;
 		private SupportSearch mSearch;
-		private ListView mUsersList;
-		private FriendAdapter mAdapter;
+		private ListView mListingsList;
+		private AccommodationAdapter mAdapter;
 		private Profile mCurrentUser;
 		SQLiteConnection db;
 
@@ -44,7 +44,7 @@ namespace ConnectUTS
 
 			mCurrentUser = db.Query<Profile>("SELECT * FROM Profile WHERE StudentId = '" + Arguments.GetString("studentID") + "'")[0];
 
-			DisplayUsers (view);
+			DisplayListings (view);
 
 			return view;
 		}
@@ -66,27 +66,25 @@ namespace ConnectUTS
 		// Displays the all the users sorted by "match"
 		private void DisplayUsers (View view)
 		{
-<<<<<<< HEAD
-			//mUsers = new List<Profile> ();
-			mUsers = db.Query<Profile>("SELECT * FROM Profile");
-=======
-			mUsers = new List<Profile> ();
-			foreach (Profile user in db.Query<Profile>("SELECT * FROM Profile"))
+			mListings = new List<Accommodation> ();
+			// Change to get the listings
+			foreach (Accommodation listing in db.Query<Accommodation>("SELECT * FROM Profile"))
 			{
-				if (!(user.StudentID == mCurrentUser.StudentID))
+				// Check if the listings are posted by the user and not display them
+				if (!(listing.StudentID == mCurrentUser.StudentID))
 				{
-					mUsers.Add (user);
+					mListings.Add (lisitng);
 				}
 			}
 
-			mUsers = mUsers.OrderByDescending (user => user.GetRank (mCurrentUser)).ToList();
->>>>>>> master
+			// Change to check listing owner's interests against the 
+			mListings = mListings.OrderByDescending (user => user.GetRank (mCurrentUser)).ToList();
 
 			// Add users to the mUsers list 
 			// Inflate the listview with the mUsers list
-			mUsersList = view.FindViewById<ListView>(Resource.Id.listFriends);
-			mAdapter = new FriendAdapter (Activity, mUsers, mCurrentUser);
-			mUsersList.Adapter = mAdapter;
+			mListingsList = view.FindViewById<ListView>(Resource.Id.listAccommodation);
+			mAdapter = new AccommodationAdapter (Activity, mListings, mCurrentUser);
+			mListingsList.Adapter = mAdapter;
 		}
 	}
 }

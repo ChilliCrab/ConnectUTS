@@ -5,24 +5,31 @@
     android:layout_height="wrap_content"
     android:padding="12dp">
     <TextView
-        android:id="@+id/userName"
-        android:text="Student Name"
+        android:id="@+id/accPriceSuburb"
+        android:text="$Price p/w - Suburb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="24dp"
         android:paddingBottom="6dp" />
     <TextView
-        android:id="@+id/userNationality"
-        android:text="Nationality"
+        android:id="@+id/accAddress"
+        android:text="Address"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:textColor="@color/black"
         android:textSize="16dp"
         android:paddingBottom="6dp" />
     <TextView
-        android:id="@+id/userInterests"
+        android:id="@+id/accInterests"
         android:text="Matching Interests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+    <TextView
+        android:id="@+id/accDescription"
+        android:text="Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"

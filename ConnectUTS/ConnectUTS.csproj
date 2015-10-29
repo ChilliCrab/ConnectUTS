@@ -16,6 +16,8 @@
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>ConnectUTS</AssemblyName>
     <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -69,6 +71,10 @@
     <Compile Include="SupportingClasses\InputValidation.cs" />
     <Compile Include="Activities\DatabaseActivity.cs" />
     <Compile Include="Fragments\FindHousemateFragment.cs" />
+    <Compile Include="SupportingClasses\JavaHolder.cs" />
+    <Compile Include="SupportingClasses\ObjectExtensions.cs" />
+    <Compile Include="AccommodationAdapter.cs" />
+    <Compile Include="Fragments\AccommodationFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -101,6 +107,8 @@
     <AndroidResource Include="Resources\layout\FindHousemateLayout.axml" />
     <AndroidResource Include="Resources\menu\ActionMenu.xml" />
     <AndroidResource Include="Resources\layout\DatabaseScreen.axml" />
+    <AndroidResource Include="Resources\layout\Accommodation.axml" />
+    <AndroidResource Include="Resources\layout\AccommodationRowLayout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
