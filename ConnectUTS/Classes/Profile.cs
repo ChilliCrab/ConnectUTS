@@ -1,4 +1,5 @@
-﻿using SQLite;
+﻿using System;
+using SQLite;
 
 namespace ConnectUTS
 {
@@ -18,6 +19,23 @@ namespace ConnectUTS
 		public override string ToString ()
 		{
 			return string.Format ("[Profile: StudentID={0}, StudentName={1}, Nationality={2}, ContactNumber={3}, Degree={4}, Year={5}, Interest={6}, AccommodationID={7}]", StudentID, StudentName, Nationality, ContactNumber, Degree, Year, Interest, AccommodationID);
+		}
+
+		public int GetRank(Profile user)
+		{
+			int count = 0;
+
+			if (user.Interest == Interest)
+			{
+				count += 2;
+			}
+
+			if (user.Nationality == Nationality)
+			{
+				count += 1;
+			}
+
+			return count;
 		}
 	}
 }

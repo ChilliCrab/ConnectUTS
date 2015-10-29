@@ -25,6 +25,7 @@ namespace ConnectUTS
 		private SupportSearch mSearch;
 		private ListView mUsersList;
 		private FriendAdapter mAdapter;
+		private Profile mCurrentUser;
 		SQLiteConnection db;
 
 		public override void OnCreate (Bundle savedInstanceState)
@@ -40,6 +41,8 @@ namespace ConnectUTS
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			db = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
+
+			mCurrentUser = db.Query<Profile>("SELECT * FROM Profile WHERE StudentId = '" + Arguments.GetString("studentID") + "'")[0];
 
 			DisplayUsers (view);
 
@@ -57,11 +60,7 @@ namespace ConnectUTS
 
 			// Check for query and filter ListView
 			mSearch.QueryTextChange += (sender, e) => mAdapter.Filter.InvokeFilter(e.NewText);
-			mSearch.QueryTextSubmit += (sender, e) => 
-			{
-				Toast.MakeText(Activity, "Searched for: " + e.Query, ToastLength.Short).Show();
-				e.Handled = true;
-			};
+			mSearch.QueryTextSubmit += (sender, e) => {};
 		}
 
 		// Displays the all the users sorted by "match"
@@ -70,17 +69,19 @@ namespace ConnectUTS
 			mUsers = new List<Profile> ();
 			foreach (Profile user in db.Query<Profile>("SELECT * FROM Profile"))
 			{
-				mUsers.Add (user);
+				if (!(user.StudentID == mCurrentUser.StudentID))
+				{
+					mUsers.Add (user);
+				}
 			}
 
-			Log.Debug ("DisplayUsers", mUsers.Count.ToString());
+			mUsers = mUsers.OrderByDescending (user => user.GetRank (mCurrentUser)).ToList();
 
 			// Add users to the mUsers list 
 			// Inflate the listview with the mUsers list
 			mUsersList = view.FindViewById<ListView>(Resource.Id.listFriends);
-			mAdapter = new FriendAdapter (Activity, mUsers);
+			mAdapter = new FriendAdapter (Activity, mUsers, mCurrentUser);
 			mUsersList.Adapter = mAdapter;
 		}
 	}
 }
-

@@ -11,35 +11,33 @@ using Object = Java.Lang.Object;
 
 namespace ConnectUTS
 {
-	public class FriendAdapter : BaseAdapter<Profile>, IFilterable
+	public class AccommodationAdapter : BaseAdapter<Accommodation>, IFilterable
 	{
 		private Activity mContext;
-		private Profile mCurrentUser;
-		private List<Profile> mUsers;
-		private List<Profile> mAllUsers;
+		private List<Accommodation> mListings;
+		private List<Accommodation> mAllListings;
 
-		public FriendAdapter(Activity context, List<Profile> users, Profile currentUser)
+		public AccommodationAdapter(Activity context, List<Accommodation> listings)
 		{
 			mContext = context;
-			mUsers = users;
-			mCurrentUser = currentUser;
+			mListings = listings;
 
-			Filter = new FriendFilter (this);
+			Filter = new AccommodationFilter (this);
 		}
 
 		public override int Count
 		{
 			get
 			{
-				return mUsers.Count;
+				return mListings.Count;
 			}
 		}
 
-		public override Profile this[int position]
+		public override Accommodation this[int position]
 		{
 			get
 			{
-				return mUsers[position];
+				return mListings[position];
 			}
 		}
 
@@ -57,32 +55,12 @@ namespace ConnectUTS
 				view = mContext.LayoutInflater.Inflate (Resource.Layout.UsersRowLayout, parent, false);
 			}
 
-			Profile user = mUsers [position];
+			Profile user = mListings [position];
 
 			view.FindViewById<TextView> (Resource.Id.userName).Text = user.StudentName;
 			view.FindViewById<TextView> (Resource.Id.userNationality).Text = "Nationality: " + user.Nationality;
-			// Cycle through array of interests and append to a string.
-			string interestsString = "Matching Interests: ";
-			//bool notFirstInterest = false;
+			view.FindViewById<TextView> (Resource.Id.userInterests).Text = "Interests: " + user.Interest;
 
-//			foreach (string interest in user.Interest) 
-//			{
-//				if (notFirstInterest) 
-//				{
-//					interestsString += ", " + interest;
-//				} 
-//				else 
-//				{
-//					interestsString += " " + interest;
-//				}
-//			}
-
-			if (user.Interest == mCurrentUser.Interest) {
-				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + user.Interest;
-			} else
-			{
-				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + "None";
-			}
 			return view;
 		}
 
@@ -93,11 +71,11 @@ namespace ConnectUTS
 			base.NotifyDataSetChanged ();
 		}
 
-		private class FriendFilter : Filter
+		private class AccommodationFilter : Filter
 		{
-			private FriendAdapter mAdapter;
+			private AccommodationAdapter mAdapter;
 
-			public FriendFilter(FriendAdapter adapter)
+			public AccommodationFilter(AccommodationAdapter adapter)
 			{
 				mAdapter = adapter;
 			}
@@ -107,9 +85,9 @@ namespace ConnectUTS
 				var returnObject = new FilterResults ();
 				var results = new List<Profile> ();
 
-				if (mAdapter.mAllUsers == null) 
+				if (mAdapter.mAllListings == null) 
 				{
-					mAdapter.mAllUsers = mAdapter.mUsers;
+					mAdapter.mAllListings = mAdapter.mListings;
 				}
 
 				if (constraint == null) 
@@ -117,11 +95,11 @@ namespace ConnectUTS
 					return returnObject;
 				}
 
-				if (mAdapter.mAllUsers != null && mAdapter.mAllUsers.Any ()) 
+				if (mAdapter.mAllListings != null && mAdapter.mAllListings.Any ()) 
 				{
 					results.AddRange(
-						mAdapter.mAllUsers.Where (
-							user => user.Interest.ToLower ().Contains (constraint.ToString ())));
+						mAdapter.mAllListings.Where (
+							//user => user.Interest.ToLower ().Contains (constraint.ToString ())));
 				}
 
 				returnObject.Values = FromArray(results.Select(
