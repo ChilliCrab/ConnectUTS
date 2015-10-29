@@ -55,7 +55,7 @@ namespace ConnectUTS
 			view.FindViewById<TextView> (Resource.Id.userName).Text = user.StudentName;
 			view.FindViewById<TextView> (Resource.Id.userNationality).Text = "Nationality: " + user.Nationality;
 			// Cycle through array of interests and append to a string.
-			string interestsString = "Interests:";
+			//string interestsString = "Interests:";
 			//bool notFirstInterest = false;
 
 //			foreach (string interest in user.Interest) 
@@ -69,9 +69,7 @@ namespace ConnectUTS
 //					interestsString += " " + interest;
 //				}
 //			}
-
-			interestsString += " " + user.Interest;
-			view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString;
+			view.FindViewById<TextView> (Resource.Id.userInterests).Text = "Interests: " + user.Interest;
 		
 			return view;
 		}

@@ -67,8 +67,9 @@ namespace ConnectUTS
 		// Displays the all the users sorted by "match"
 		private void DisplayUsers (View view)
 		{
-			//mUsers = new List<Profile> ();
-			//mUsers = db.Query<Profile>("SELECT * FROM Profile");
+			mUsers = new List<Profile> ();
+			mUsers = db.Query<Profile>("SELECT * FROM Profile");
+			Log.Debug ("DisplayUsers", mUsers.Count.ToString());
 
 			// Add users to the mUsers list 
 			// Inflate the listview with the mUsers list
