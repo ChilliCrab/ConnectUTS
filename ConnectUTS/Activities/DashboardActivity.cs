@@ -27,7 +27,7 @@ namespace ConnectUTS
 		private ArrayAdapter mDashboardAdapter;
 		private ListView mDashboard;
 		private FragmentTransaction mFragmentManager;
-		//private Fragment mFriends;
+		private Fragment mFriends;
 		//private Fragment mProfile;
 		private string studentID = String.Empty;
 
@@ -43,7 +43,7 @@ namespace ConnectUTS
 			mToolbar = FindViewById<SupportToolbar> (Resource.Id.toolbar);
 
 			// Set up the fragments
-
+			mFriends = new FriendsFragment();
 
 
 			// Sets up the toggle for the dashboard drawer.

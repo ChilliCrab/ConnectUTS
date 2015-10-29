@@ -6,18 +6,25 @@ using Android.App;
 using Android.Views;
 using Android.Widget;
 
+using Java.Lang;
+using Object = Java.Lang.Object;
+
 namespace ConnectUTS
 {
-	public class FriendAdapter : BaseAdapter<Profile>
+	public class FriendAdapter : BaseAdapter<Profile>, IFilterable
 	{
 		private Activity mContext;
+		private Profile mCurrentUser;
 		private List<Profile> mUsers;
-		private List<Profile> mFilterUsers;
+		private List<Profile> mAllUsers;
 
-		public FriendAdapter(Activity context, List<Profile> users)
+		public FriendAdapter(Activity context, List<Profile> users, Profile currentUser)
 		{
 			mContext = context;
 			mUsers = users;
+			mCurrentUser = currentUser;
+
+			Filter = new FriendFilter (this);
 		}
 
 		public override int Count
@@ -55,7 +62,7 @@ namespace ConnectUTS
 			view.FindViewById<TextView> (Resource.Id.userName).Text = user.StudentName;
 			view.FindViewById<TextView> (Resource.Id.userNationality).Text = "Nationality: " + user.Nationality;
 			// Cycle through array of interests and append to a string.
-			string interestsString = "Interests:";
+			string interestsString = "Matching Interests: ";
 			//bool notFirstInterest = false;
 
 //			foreach (string interest in user.Interest) 
@@ -70,20 +77,75 @@ namespace ConnectUTS
 //				}
 //			}
 
-			interestsString += " " + user.Interest;
-			view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString;
-		
+			if (user.Interest == mCurrentUser.Interest) {
+				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + user.Interest;
+			} 
+			else
+			{
+				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + "None";
+			}
 			return view;
 		}
 
-		public void Filter(string filter)
-		{
-			// Change to cycle through interest ARRAY
-			mFilterUsers = (from user in mUsers
-			                where user.Interest.ToLower ().Contains (filter.ToLower ())
-			                select user).ToList ();
+		public Filter Filter{ get; private set; }
 
-			NotifyDataSetChanged ();
+		public override void NotifyDataSetChanged ()
+		{
+			base.NotifyDataSetChanged ();
+		}
+
+		private class FriendFilter : Filter
+		{
+			private FriendAdapter mAdapter;
+
+			public FriendFilter(FriendAdapter adapter)
+			{
+				mAdapter = adapter;
+			}
+
+			protected override FilterResults PerformFiltering(ICharSequence constraint)
+			{
+				var returnObject = new FilterResults ();
+				var results = new List<Profile> ();
+
+				if (mAdapter.mAllUsers == null) 
+				{
+					mAdapter.mAllUsers = mAdapter.mUsers;
+				}
+
+				if (constraint == null) 
+				{
+					return returnObject;
+				}
+
+				if (mAdapter.mAllUsers != null && mAdapter.mAllUsers.Any ()) 
+				{
+					results.AddRange(
+						mAdapter.mAllUsers.Where (
+							user => user.Interest.ToLower ().Contains (constraint.ToString ())));
+				}
+
+				returnObject.Values = FromArray(results.Select(
+					result => result.ToJavaObject()).ToArray());
+				returnObject.Count = results.Count;
+
+				constraint.Dispose ();
+				return returnObject;
+			}
+
+			protected override void PublishResults(ICharSequence constraint, FilterResults results)
+			{
+				using (var values = results.Values) 
+				{
+					mAdapter.mUsers = values.ToArray<Object> ().Select (
+						result => result.ToNetObject<Profile> ()).ToList ();
+				}
+
+				mAdapter.NotifyDataSetChanged ();
+
+				constraint.Dispose ();
+				results.Dispose ();
+			}
 		}
 	}
 }
