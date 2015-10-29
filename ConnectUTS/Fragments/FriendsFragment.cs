@@ -43,7 +43,7 @@ namespace ConnectUTS
 
 			DisplayUsers (view);
 
-			return base.OnCreateView (inflater, container, savedInstanceState);
+			return view;
 		}
 
 		public override void OnCreateOptionsMenu (IMenu menu, MenuInflater inflater)
@@ -68,7 +68,7 @@ namespace ConnectUTS
 		private void DisplayUsers (View view)
 		{
 			//mUsers = new List<Profile> ();
-			//mUsers = db.Query<Profile>("SELECT * FROM Profile");
+			mUsers = db.Query<Profile>("SELECT * FROM Profile");
 
 			// Add users to the mUsers list 
 			// Inflate the listview with the mUsers list

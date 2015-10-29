@@ -82,7 +82,6 @@ namespace ConnectUTS
 			mFilterUsers = (from user in mUsers
 			                where user.Interest.ToLower ().Contains (filter.ToLower ())
 			                select user).ToList ();
-
 			NotifyDataSetChanged ();
 		}
 	}
