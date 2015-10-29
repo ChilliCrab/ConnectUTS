@@ -72,6 +72,8 @@
     <Compile Include="Activities\DatabaseActivity.cs" />
     <Compile Include="Fragments\FindHousemateFragment.cs" />
     <Compile Include="SupportingClasses\ProfileDBHelper.cs" />
+    <Compile Include="SupportingClasses\JavaHolder.cs" />
+    <Compile Include="SupportingClasses\ObjectExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -56,7 +56,7 @@ namespace ConnectUTS
 			mSearch = searchView.JavaCast<SupportSearch> ();
 
 			// Check for query and filter ListView
-			mSearch.QueryTextChange += (sender, e) => mAdapter.Filter(e.NewText);
+			mSearch.QueryTextChange += (sender, e) => mAdapter.Filter.InvokeFilter(e.NewText);
 			mSearch.QueryTextSubmit += (sender, e) => 
 			{
 				Toast.MakeText(Activity, "Searched for: " + e.Query, ToastLength.Short).Show();
