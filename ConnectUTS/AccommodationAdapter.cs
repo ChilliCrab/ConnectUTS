@@ -14,13 +14,15 @@ namespace ConnectUTS
 	public class AccommodationAdapter : BaseAdapter<Accommodation>, IFilterable
 	{
 		private Activity mContext;
+		private Profile mCurrentUser;
 		private List<Accommodation> mListings;
 		private List<Accommodation> mAllListings;
 
-		public AccommodationAdapter(Activity context, List<Accommodation> listings)
+		public AccommodationAdapter(Activity context, List<Accommodation> listings, Profile currentUser)
 		{
 			mContext = context;
 			mListings = listings;
+			mCurrentUser = currentUser;
 
 			Filter = new AccommodationFilter (this);
 		}
@@ -52,14 +54,37 @@ namespace ConnectUTS
 
 			if (view == null) 
 			{
-				view = mContext.LayoutInflater.Inflate (Resource.Layout.UsersRowLayout, parent, false);
+				view = mContext.LayoutInflater.Inflate (Resource.Layout.AccommodationRowLayout, parent, false);
 			}
 
-			Profile user = mListings [position];
+			Accommodation listing = mListings [position];
 
-			view.FindViewById<TextView> (Resource.Id.userName).Text = user.StudentName;
-			view.FindViewById<TextView> (Resource.Id.userNationality).Text = "Nationality: " + user.Nationality;
-			view.FindViewById<TextView> (Resource.Id.userInterests).Text = "Interests: " + user.Interest;
+			view.FindViewById<TextView> (Resource.Id.accPriceSuburb).Text = "$" + listing.RentAWeek + "p.w. - " + listing.Suburb;
+			view.FindViewById<TextView> (Resource.Id.accAddress).Text = listing.Address;
+
+			//string interestsString = "Matching Interests: ";
+			//bool notFirstInterest = false;
+
+			//			foreach (string interest in user.Interest) 
+			//			{
+			//				if (notFirstInterest) 
+			//				{
+			//					interestsString += ", " + interest;
+			//				} 
+			//				else 
+			//				{
+			//					interestsString += " " + interest;
+			//				}
+			//			}
+
+//			if (user.Interest == mCurrentUser.Interest) {
+//				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + user.Interest;
+//			} 
+//			else
+//			{
+//				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + "None";
+//			}
+			view.FindViewById<TextView> (Resource.Id.accDescription).Text = listing.Description;
 
 			return view;
 		}
@@ -97,14 +122,15 @@ namespace ConnectUTS
 
 				if (mAdapter.mAllListings != null && mAdapter.mAllListings.Any ()) 
 				{
-					results.AddRange(
-						mAdapter.mAllListings.Where (
+					//results.AddRange(
+						//mAdapter.mAllListings.Where (
+							// Check the current user's interests with the listing owner's.
 							//user => user.Interest.ToLower ().Contains (constraint.ToString ())));
 				}
 
-				returnObject.Values = FromArray(results.Select(
-					result => result.ToJavaObject()).ToArray());
-				returnObject.Count = results.Count;
+//				returnObject.Values = FromArray(results.Select(
+//								result => result.ToJavaObject().ToArray()));
+//				returnObject.Count = results.Count;
 
 				constraint.Dispose ();
 				return returnObject;
@@ -114,7 +140,7 @@ namespace ConnectUTS
 			{
 				using (var values = results.Values) 
 				{
-					mAdapter.mUsers = values.ToArray<Object> ().Select (
+					mAdapter.mListings = values.ToArray<Object> ().Select (
 						result => result.ToNetObject<Profile> ()).ToList ();
 				}
 

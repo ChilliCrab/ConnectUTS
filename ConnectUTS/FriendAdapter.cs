@@ -79,7 +79,8 @@ namespace ConnectUTS
 
 			if (user.Interest == mCurrentUser.Interest) {
 				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + user.Interest;
-			} else
+			} 
+			else
 			{
 				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + "None";
 			}
