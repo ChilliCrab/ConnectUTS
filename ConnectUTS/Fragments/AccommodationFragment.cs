@@ -19,9 +19,9 @@ using SQLite;
 
 namespace ConnectUTS
 {
-	public class FriendsFragment : Fragment
+	public class AccommodationFragment : Fragment
 	{
-		private List<Accommodation> mListings;
+		private List<Profile> mListings;
 		private SupportSearch mSearch;
 		private ListView mListingsList;
 		private AccommodationAdapter mAdapter;
@@ -37,7 +37,7 @@ namespace ConnectUTS
 
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
-			View view = inflater.Inflate(Resource.Layout.Friends, container, false);
+			View view = inflater.Inflate(Resource.Layout.Accommodation, container, false);
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			db = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
@@ -64,21 +64,26 @@ namespace ConnectUTS
 		}
 
 		// Displays the all the users sorted by "match"
-		private void DisplayUsers (View view)
+		private void DisplayListings (View view)
 		{
-			mListings = new List<Accommodation> ();
+			mListings = new List<Profile> ();
 			// Change to get the listings
-			foreach (Accommodation listing in db.Query<Accommodation>("SELECT * FROM Profile"))
+			foreach (Profile listing in db.Query<Profile>("SELECT * FROM Profile"))
 			{
 				// Check if the listings are posted by the user and not display them
 				if (!(listing.StudentID == mCurrentUser.StudentID))
 				{
-					mListings.Add (lisitng);
+					mListings.Add (listing);
 				}
 			}
 
 			// Change to check listing owner's interests against the 
 			mListings = mListings.OrderByDescending (user => user.GetRank (mCurrentUser)).ToList();
+//			// store the accommodation class of each selected profile class
+//			var myAccommodationList = new List<Accommodation> ();
+//			foreach (Profile profile in mListings) {
+//				myAccommodationList.Add (db.Query<Accommodation>("SELECT * FROM Accommodation WHERE ID = '" + profile.AccommodationID + "'")[0]);
+//			}
 
 			// Add users to the mUsers list 
 			// Inflate the listview with the mUsers list

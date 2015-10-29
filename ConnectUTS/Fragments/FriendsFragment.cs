@@ -66,10 +66,6 @@ namespace ConnectUTS
 		// Displays the all the users sorted by "match"
 		private void DisplayUsers (View view)
 		{
-<<<<<<< HEAD
-			//mUsers = new List<Profile> ();
-			mUsers = db.Query<Profile>("SELECT * FROM Profile");
-=======
 			mUsers = new List<Profile> ();
 			foreach (Profile user in db.Query<Profile>("SELECT * FROM Profile"))
 			{
@@ -80,7 +76,6 @@ namespace ConnectUTS
 			}
 
 			mUsers = mUsers.OrderByDescending (user => user.GetRank (mCurrentUser)).ToList();
->>>>>>> master
 
 			// Add users to the mUsers list 
 			// Inflate the listview with the mUsers list

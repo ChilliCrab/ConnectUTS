@@ -96,13 +96,7 @@ namespace ConnectUTS
 
 		private class FriendFilter : Filter
 		{
-<<<<<<< HEAD
-			// Change to cycle through interest ARRAY
-			mFilterUsers = (from user in mUsers
-			                where user.Interest.ToLower ().Contains (filter.ToLower ())
-			                select user).ToList ();
-			NotifyDataSetChanged ();
-=======
+
 			private FriendAdapter mAdapter;
 
 			public FriendFilter(FriendAdapter adapter)
@@ -153,7 +147,6 @@ namespace ConnectUTS
 				constraint.Dispose ();
 				results.Dispose ();
 			}
->>>>>>> master
 		}
 	}
 }
