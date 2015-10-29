@@ -18,13 +18,13 @@ namespace ConnectUTS
 {
 	public class ProfilePageFragment : Fragment
 	{
-		EditText profileIdInput;
+		TextView profileIdInput;
 		EditText profileNameInput;
 		EditText profileNationalityInput;
+		EditText profileYearInput;
 		EditText profileContactNumberInput;
-//		EditText profileDegreeInput;
-//		EditText profileYearInput;
-//		EditText profileInterestInput;
+		Spinner profileFieldOfStudyInput;
+		Spinner profileInterestInput;
 		Button profileEditButton;
 		SQLiteConnection accountDB;
 		string mode = "Confirmed";
@@ -44,10 +44,10 @@ namespace ConnectUTS
 		{
 			profileNameInput.Enabled = canEdit;
 			profileNationalityInput.Enabled = canEdit;
+			profileYearInput.Enabled = canEdit;
 			profileContactNumberInput.Enabled = canEdit;
-//			profileDegreeInput.Enabled = canEdit;
-//			profileYearInput.Enabled = canEdit;
-//			profileInterestInput.Enabled = canEdit;
+			profileFieldOfStudyInput.Enabled = canEdit;
+			profileInterestInput.Enabled = canEdit;
 		}
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
@@ -57,26 +57,35 @@ namespace ConnectUTS
 			studentID = Arguments.GetString ("studentID");
 
 			View view = inflater.Inflate(Resource.Layout.ProfilePageLayout, container, false);
-			profileIdInput = view.FindViewById<EditText>(Resource.Id.profileIdInput);
+			profileIdInput = view.FindViewById<TextView>(Resource.Id.profileIdInput);
 			profileNameInput = view.FindViewById<EditText>(Resource.Id.profileNameInput);
 			profileNationalityInput = view.FindViewById<EditText>(Resource.Id.profileNationalityInput);
+			profileYearInput = view.FindViewById<EditText>(Resource.Id.profileYearInput);
 			profileContactNumberInput = view.FindViewById<EditText>(Resource.Id.profileContactInput);
-			//			profileDegreeInput = view.FindViewById<EditText>(Resource.Id);
-			//			profileYearInput = view.FindViewById<EditText>(Resource.Id);
-			//			profileInterestInput = view.FindViewById<EditText>(Resource.Id);
+			profileFieldOfStudyInput = view.FindViewById<Spinner>(Resource.Id.profileFieldOfStudyInput);
+			profileInterestInput = view.FindViewById<Spinner>(Resource.Id.profileInterestInput);
 			profileEditButton = view.FindViewById<Button> (Resource.Id.profileEditButton);
+
+			profileFieldOfStudyInput.Enabled = false;
+			profileInterestInput.Enabled = false;
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
 			//acc = accountDB.Query<Account>("SELECT * FROM Account WHERE StudentID = '12463170'");
 			prof = accountDB.Query<Profile>("SELECT * FROM Profile WHERE StudentID = '" + studentID + "'");
+			var adapter = profileInterestInput.Adapter;
 
 			profileIdInput.Text = prof[0].StudentID;
 			profileNameInput.Text = prof[0].StudentName;
 			profileNationalityInput.Text = prof[0].Nationality;
 			profileContactNumberInput.Text = prof[0].ContactNumber;
-//			profileDegreeInput.Text = prof [0].Degree;
-//			profileYearInput.Text = prof [0].Year;
+			//profileFieldOfStudyInput.Text = prof [0].Degree;
+//			for (int i = 0; i<adapter.Count; i++)
+//			{
+//				if(adapter.GetItemId(i).ToString().Equals(prof [0].Interest))
+//					profileInterestInput.SetSelection(i);
+//			}
+			profileYearInput.Text = prof [0].Year;
 
 			profileEditButton.Click += (sender, e) => {
 				switch(mode)
