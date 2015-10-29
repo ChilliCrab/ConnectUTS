@@ -1,4 +1,5 @@
 ﻿
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,10 +57,6 @@ namespace ConnectUTS
 
 			// Controls the dashboard.
 			InflateDashboard();
-			var dbAlert = new Android.App.AlertDialog.Builder(this);
-			dbAlert.SetMessage(studentID);
-			dbAlert.SetNegativeButton("OK", delegate{});
-			dbAlert.Show();
 		}
 
 		public override bool OnOptionsItemSelected(IMenuItem item)
@@ -147,6 +144,11 @@ namespace ConnectUTS
 				case 3:
 					// Find a housemate
 					mCurrentViewTitle = Resource.String.housemate_title;
+					var mHousemate = new FindHousemateFragment();
+					Bundle bundle3 = new Bundle();
+					bundle3.PutString("studentID", studentID);
+					mHousemate.Arguments = bundle3;
+					SetView(Resource.Id.fragmentContainer, mHousemate, true);
 					break;
 				case 4:
 					// Settings

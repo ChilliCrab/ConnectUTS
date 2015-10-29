@@ -56,7 +56,7 @@ namespace ConnectUTS
 			view.FindViewById<TextView> (Resource.Id.userNationality).Text = "Nationality: " + user.Nationality;
 			// Cycle through array of interests and append to a string.
 			string interestsString = "Interests:";
-			bool notFirstInterest = false;
+			//bool notFirstInterest = false;
 
 //			foreach (string interest in user.Interest) 
 //			{
@@ -82,8 +82,8 @@ namespace ConnectUTS
 			mFilterUsers = (from user in mUsers
 			                where user.Interest.ToLower ().Contains (filter.ToLower ())
 			                select user).ToList ();
+
 			NotifyDataSetChanged ();
 		}
 	}
 }
-

@@ -154,6 +154,28 @@ namespace ConnectUTS
 			"2",
 			"4",
 			"2"};
+		public static string[] interests = {
+			"Animals",
+			"Art",
+			"Cooking",
+			"Fashion",
+			"Games",
+			"Cooking",
+			"Art",
+			"Technology",
+			"Technology",
+			"Travel",
+			"Sports",
+			"Technology",
+			"Sports",
+			"Art",
+			"Cars",
+			"Health",
+			"Politics",
+			"TV",
+			"Animals",
+			"Cooking"
+		};
 
 		public static string InitializeDatabase ()
 		{
@@ -177,8 +199,9 @@ namespace ConnectUTS
 					profile.Nationality = nationalities [i];
 					profile.ContactNumber = contactNums [i];
 					profile.Degree = degrees [i];
-					profile.Interest = String.Empty;
+					profile.Interest = interests[i];
 					profile.Year = years [i];
+					profile.AccommodationID = i.ToString ();
 
 					accom.ID = i.ToString ();
 					accom.Address = String.Empty;

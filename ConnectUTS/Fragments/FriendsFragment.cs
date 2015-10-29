@@ -15,6 +15,8 @@ using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using SupportSearch = Android.Support.V7.Widget.SearchView;
 
+using SQLite;
+
 namespace ConnectUTS
 {
 	public class FriendsFragment : Fragment
@@ -23,6 +25,7 @@ namespace ConnectUTS
 		private SupportSearch mSearch;
 		private ListView mUsersList;
 		private FriendAdapter mAdapter;
+		SQLiteConnection db;
 
 		public override void OnCreate (Bundle savedInstanceState)
 		{
@@ -34,6 +37,9 @@ namespace ConnectUTS
 		public override View OnCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{
 			View view = inflater.Inflate(Resource.Layout.Friends, container, false);
+
+			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
+			db = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
 
 			DisplayUsers (view);
 
@@ -61,9 +67,10 @@ namespace ConnectUTS
 		// Displays the all the users sorted by "match"
 		private void DisplayUsers (View view)
 		{
-			mUsers = new List<Profile> ();
+			//mUsers = new List<Profile> ();
+			//mUsers = db.Query<Profile>("SELECT * FROM Profile");
 
-			// Add users to the mUsers list
+			// Add users to the mUsers list 
 			// Inflate the listview with the mUsers list
 			mUsersList = view.FindViewById<ListView>(Resource.Id.listFriends);
 			mAdapter = new FriendAdapter (Activity, mUsers);

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#C2C2C2">
+    <LinearLayout
+        android:id="@+id/housemateTitle"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:layout_gravity="center">
+        <ImageView
+            android:src="@drawable/ic_launcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:maxHeight="60dp" />
+        <TextView
+            android:id="@+id/housemateHeading"
+            android:text="@string/housemate_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="28dp" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/housemateMisc"
+        android:text="Fill in your accomodation details"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:gravity="left"
+        android:layout_below="@id/housemateTitle" />
+    <LinearLayout
+        android:id="@+id/housemate1"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/housemateMisc">
+        <TextView
+            android:id="@+id/housemateAddress"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="50"
+            android:text="Address"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="@color/black" />
+        <EditText
+            android:id="@+id/housemateAddressInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            android:scrollHorizontally="true"
+            android:maxLines="1"
+            android:enabled="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/housemate2"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/housemate1">
+        <TextView
+            android:id="@+id/housemateSuburb"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="50"
+            android:text="Suburb"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/housemateSuburbInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:maxLines="1"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            android:enabled="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/housemate3"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/housemate2">
+        <TextView
+            android:id="@+id/housemateRent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:text="Rent per week"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="@color/black" />
+        <EditText
+            android:id="@+id/housemateRentInput"
+            android:inputType="number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:enabled="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/housemate4"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/housemate3">
+        <TextView
+            android:id="@+id/housemateContact"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:text="Preferred Contact"
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="@color/black" />
+        <EditText
+            android:id="@+id/housemateContactInput"
+            android:inputType="number"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            android:maxLines="1"
+            android:enabled="false" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/housemateDescription"
+        android:text="Description"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:gravity="left"
+        android:layout_below="@id/housemate4" />
+    <EditText
+        android:id="@+id/housemateDescriptionInput"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_weight="60"
+        android:background="@drawable/edit_text_style"
+        android:textColor="@color/black"
+        android:layout_marginTop="2dp"
+        android:maxLines="4"
+        android:minLines="4"
+        android:layout_below="@id/housemateDescription"
+        android:enabled="false" />
+    <Button
+        android:text="Edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/buttonBlue"
+        android:id="@+id/housemateEditButton"
+        android:layout_below="@id/housemateDescriptionInput" />
+</RelativeLayout>
