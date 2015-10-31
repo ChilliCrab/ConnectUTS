@@ -58,7 +58,6 @@
     <Compile Include="Fragments\ProfilePageFragment.cs" />
     <Compile Include="Classes\Account.cs" />
     <Compile Include="Classes\Profile.cs" />
-    <Compile Include="Fragments\FriendsFragment.cs" />
     <Compile Include="FriendAdapter.cs" />
     <Compile Include="Classes\Accommodation.cs" />
     <Compile Include="Activities\CreateAccountActivity.cs" />
@@ -73,6 +72,7 @@
     <Compile Include="SupportingClasses\ObjectExtensions.cs" />
     <Compile Include="AccommodationAdapter.cs" />
     <Compile Include="Fragments\AccommodationFragment.cs" />
+    <Compile Include="Fragments\FriendsFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
