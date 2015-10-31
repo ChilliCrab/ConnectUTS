@@ -96,6 +96,7 @@ namespace ConnectUTS
 
 		private class FriendFilter : Filter
 		{
+
 			private FriendAdapter mAdapter;
 
 			public FriendFilter(FriendAdapter adapter)

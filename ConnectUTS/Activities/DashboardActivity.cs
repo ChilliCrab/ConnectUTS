@@ -28,7 +28,10 @@ namespace ConnectUTS
 		private ListView mDashboard;
 		private FragmentTransaction mFragmentManager;
 		private Fragment mFriends;
-		//private Fragment mProfile;
+		private Fragment mProfile;
+		private Fragment mBed;
+		private Fragment mHousemate;
+		private Bundle userIDHolder;
 		private string studentID = String.Empty;
 
 		protected override void OnCreate (Bundle bundle)
@@ -44,7 +47,17 @@ namespace ConnectUTS
 
 			// Set up the fragments
 			mFriends = new FriendsFragment();
+			mProfile = new ProfilePageFragment ();
+			mBed = new AccommodationFragment ();
+			mHousemate = new FindHousemateFragment ();
 
+			// Set up userIdHolder
+			userIDHolder = new Bundle();
+			userIDHolder.PutString("studentID", studentID);
+			mProfile.Arguments = userIDHolder;
+			mFriends.Arguments = userIDHolder;
+			mBed.Arguments = userIDHolder;
+			mHousemate.Arguments = userIDHolder;
 
 			// Sets up the toggle for the dashboard drawer.
 			mDashboardToggle = new DashboardToggle (this, mDrawerLayout, Resource.String.menu_title, mCurrentViewTitle);
@@ -122,32 +135,21 @@ namespace ConnectUTS
 				case 0:
 					// Profile page
 					mCurrentViewTitle = Resource.String.app_name;
-					var mProfile = new ProfilePageFragment();
-					Bundle bundle0 = new Bundle();
-					bundle0.PutString("studentID", studentID);
-					mProfile.Arguments = bundle0;
 					SetView(Resource.Id.fragmentContainer, mProfile, true);
 					break;
 				case 1:
 					// Find friends - suggested users
 					mCurrentViewTitle = Resource.String.friends_title;
-					var mFriends = new FriendsFragment();
-					Bundle bundle1 = new Bundle();
-					bundle1.PutString("studentID", studentID);
-					mFriends.Arguments = bundle1;
 					SetView(Resource.Id.fragmentContainer, mFriends, true);
 					break;
 				case 2:
 					// Find accommodation
 					mCurrentViewTitle = Resource.String.bed_title;
+					SetView(Resource.Id.fragmentContainer, mBed, true);
 					break;
 				case 3:
 					// Find a housemate
 					mCurrentViewTitle = Resource.String.housemate_title;
-					var mHousemate = new FindHousemateFragment();
-					Bundle bundle3 = new Bundle();
-					bundle3.PutString("studentID", studentID);
-					mHousemate.Arguments = bundle3;
 					SetView(Resource.Id.fragmentContainer, mHousemate, true);
 					break;
 				case 4:
