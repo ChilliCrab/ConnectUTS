@@ -30,7 +30,6 @@ namespace ConnectUTS
 		string mode = "Confirmed";
 		string studentID = "";
 		List<Profile> prof = null;
-		//Account acc;
 
 		public override void OnCreate (Bundle savedInstanceState)
 		{
@@ -71,20 +70,22 @@ namespace ConnectUTS
 
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			accountDB = new SQLiteConnection (System.IO.Path.Combine(path, "Database.db"));
-			//acc = accountDB.Query<Account>("SELECT * FROM Account WHERE StudentID = '12463170'");
 			prof = accountDB.Query<Profile>("SELECT * FROM Profile WHERE StudentID = '" + studentID + "'");
-			var adapter = profileInterestInput.Adapter;
 
 			profileIdInput.Text = prof[0].StudentID;
 			profileNameInput.Text = prof[0].StudentName;
 			profileNationalityInput.Text = prof[0].Nationality;
 			profileContactNumberInput.Text = prof[0].ContactNumber;
-			//profileFieldOfStudyInput.Text = prof [0].Degree;
-//			for (int i = 0; i<adapter.Count; i++)
-//			{
-//				if(adapter.GetItemId(i).ToString().Equals(prof [0].Interest))
-//					profileInterestInput.SetSelection(i);
-//			}
+			for (int i = 0; i<DataList.fields.Length; i++)
+			{
+				if(DataList.fields[i].Equals(prof [0].Degree))
+					profileFieldOfStudyInput.SetSelection(i);
+			}
+			for (int i = 0; i<DataList.interests.Length; i++)
+			{
+				if(DataList.interests[i].Equals(prof [0].Interest))
+					profileInterestInput.SetSelection(i);
+			}
 			profileYearInput.Text = prof [0].Year;
 
 			profileEditButton.Click += (sender, e) => {
@@ -102,6 +103,9 @@ namespace ConnectUTS
 					accountDB.Query<Profile>("UPDATE Profile SET StudentName = '" + profileNameInput.Text + "' WHERE StudentID = '" + studentID + "'");
 					accountDB.Query<Profile>("UPDATE Profile SET Nationality = '" + profileNationalityInput.Text + "' WHERE StudentID = '" + studentID + "'");
 					accountDB.Query<Profile>("UPDATE Profile SET ContactNumber = '" + profileContactNumberInput.Text + "' WHERE StudentID = '" + studentID + "'");
+					accountDB.Query<Profile>("UPDATE Profile SET Year = '" + profileYearInput.Text + "' WHERE StudentID = '" + studentID + "'");
+					accountDB.Query<Profile>("UPDATE Profile SET Degree = '" + profileFieldOfStudyInput.SelectedItem.ToString() + "' WHERE StudentID = '" + studentID + "'");
+					accountDB.Query<Profile>("UPDATE Profile SET Interest = '" + profileInterestInput.SelectedItem.ToString() + "' WHERE StudentID = '" + studentID + "'");
 
 					break;
 				}

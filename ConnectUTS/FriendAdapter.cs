@@ -62,7 +62,7 @@ namespace ConnectUTS
 			view.FindViewById<TextView> (Resource.Id.userName).Text = user.StudentName;
 			view.FindViewById<TextView> (Resource.Id.userNationality).Text = "Nationality: " + user.Nationality;
 			// Cycle through array of interests and append to a string.
-			string interestsString = "Matching Interests: ";
+			string interestsString = "Matched ";
 			//bool notFirstInterest = false;
 
 //			foreach (string interest in user.Interest) 
@@ -78,11 +78,11 @@ namespace ConnectUTS
 //			}
 
 			if (user.Interest == mCurrentUser.Interest) {
-				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + user.Interest;
+				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + user.Interest + "!";
 			} 
 			else
 			{
-				view.FindViewById<TextView> (Resource.Id.userInterests).Text = interestsString + "None";
+				view.FindViewById<TextView> (Resource.Id.userInterests).Text = user.Interest;
 			}
 			return view;
 		}

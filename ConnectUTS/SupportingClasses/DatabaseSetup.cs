@@ -113,26 +113,26 @@ namespace ConnectUTS
 			"430110114",
 			"414494504"};
 		public static string[] degrees = {
-			"Bachelor of Arts",
-			"Bachelor of Business",
-			"Master of Science",
-			"Bachelor of Education",
-			"Master of Design",
-			"Bachelor of Economics",
-			"Master of Laws",
-			"Master of Busines",
-			"Bachelor of Engineering",
-			"Bachelor of Laws",
-			"Bachelor of Communication",
-			"Master of Arts",
-			"Bachelor of Business",
-			"Master of Laws",
-			"Bachelor of Engineering",
-			"Bachelor of Business",
-			"Bachelor of Arts",
-			"Master of Science",
-			"Bachelor of Engineering",
-			"Bachelor of Business"};
+			"Health",
+			"Business",
+			"Science",
+			"Education",
+			"Design",
+			"Information Technology",
+			"Law",
+			"Business",
+			"Engineering",
+			"Law",
+			"Communication",
+			"Architecture",
+			"Business",
+			"Law",
+			"Engineering",
+			"Business",
+			"Architecture",
+			"Science",
+			"Engineering",
+			"Business"};
 		public static string[] years = {
 			"3",
 			"1",
@@ -344,6 +344,7 @@ namespace ConnectUTS
 			string message = "";
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var testingDatabase = new SQLiteConnection (System.IO.Path.Combine (path, "Database.db"));
+			testingDatabase.CreateTable<Account> ();
 			var stuList = testingDatabase.Query<Account> ("SELECT * FROM Account");
 			if (stuList.Count != 0) {
 
