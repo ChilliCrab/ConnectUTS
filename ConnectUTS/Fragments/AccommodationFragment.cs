@@ -71,7 +71,7 @@ namespace ConnectUTS
 			foreach (Profile listing in db.Query<Profile>("SELECT * FROM Profile"))
 			{
 				// Check if the listings are posted by the user and not display them
-				if (!(listing.StudentID == mCurrentUser.StudentID))
+				if (listing.StudentID != mCurrentUser.StudentID && !(db.Query<Accommodation>("SELECT * FROM Accommodation WHERE ID = '" + listing.AccommodationID + "'")[0].Suburb.Equals(String.Empty)))
 				{
 					mListings.Add (listing);
 				}
