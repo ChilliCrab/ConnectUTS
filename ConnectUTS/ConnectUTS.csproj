@@ -73,6 +73,7 @@
     <Compile Include="SupportingClasses\ObjectExtensions.cs" />
     <Compile Include="AccommodationAdapter.cs" />
     <Compile Include="Fragments\AccommodationFragment.cs" />
+    <Compile Include="SupportingClasses\InterestList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

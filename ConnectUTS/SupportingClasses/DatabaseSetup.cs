@@ -344,6 +344,7 @@ namespace ConnectUTS
 			string message = "";
 			string path = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal);
 			var testingDatabase = new SQLiteConnection (System.IO.Path.Combine (path, "Database.db"));
+			testingDatabase.CreateTable<Account> ();
 			var stuList = testingDatabase.Query<Account> ("SELECT * FROM Account");
 			if (stuList.Count != 0) {
 

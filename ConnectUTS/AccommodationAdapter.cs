@@ -84,13 +84,14 @@ namespace ConnectUTS
 			//				}
 			//			}
 
-			if (user.Interest == mCurrentUser.Interest) {
-				view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + user.Interest;
-			} 
-			else
-			{
-				view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + "None";
-			}
+//			if (user.Interest == mCurrentUser.Interest) {
+//				view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + user.Interest;
+//			} 
+//			else
+//			{
+//				view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + "None";
+//			}
+			view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + user.Interest;
 			view.FindViewById<TextView> (Resource.Id.accDescription).Text = listing.Description;
 
 			return view;
