@@ -62,6 +62,41 @@
         <item name="menuLogOut">Log Out</item>
     </string-array>
 
+    <!-- Strings for Profile -->
+    <string-array name="profile_interests">
+		<item>Select any...</item>
+		<item>Animals</item>
+		<item>Anime/Manga</item>
+		<item>Art</item>
+		<item>Cars</item>
+		<item>Cooking</item>
+		<item>Fashion</item>
+		<item>Games</item>
+		<item>Health</item>
+		<item>Movies</item>
+		<item>Music</item>
+		<item>Photography</item>
+		<item>Politics</item>
+		<item>Sports</item>
+		<item>Technology</item>
+		<item>Travel</item>
+		<item>TV</item>
+	</string-array>
+
+    <string-array name="profile_field_study">
+		<item>Select any...</item>
+		<item>Engineering</item>
+		<item>Information Technology</item>
+		<item>Business</item>
+		<item>Science</item>
+		<item>Communication</item>
+		<item>Education</item>
+		<item>Health</item>
+		<item>Law</item>
+		<item>Design</item>
+		<item>Architecture</item>
+	</string-array>
+
     <!-- Strings for the action bar -->
     <string name="search">Search</string>
 

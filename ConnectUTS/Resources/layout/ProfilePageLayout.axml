@@ -22,16 +22,17 @@
             android:gravity="center_vertical"
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:enabled="false" />
-        <EditText
+            android:clickable="false" />
+        <TextView
             android:id="@+id/profileIdInput"
-            android:inputType="number"
-            android:maxLines="1"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_weight="50"
             android:background="@drawable/edit_text_style"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
             android:textColor="@color/black"
+            android:clickable="false"
             android:enabled="false" />
     </LinearLayout>
     <LinearLayout
@@ -55,7 +56,7 @@
             android:gravity="center_vertical"
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:enabled="false" />
+            android:clickable="false" />
         <EditText
             android:id="@+id/profileNameInput"
             android:layout_width="fill_parent"
@@ -87,9 +88,41 @@
             android:textColor="@color/black"
             android:gravity="center_vertical"
             android:textSize="18sp"
-            android:enabled="false" />
+            android:clickable="false" />
         <EditText
             android:id="@+id/profileNationalityInput"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:maxLines="1"
+            android:background="@drawable/edit_text_style"
+            android:textColor="@color/black"
+            android:enabled="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/profileYear"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/nationality">
+        <TextView
+            android:id="@+id/profileYearText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:text="Year"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:clickable="false" />
+        <EditText
+            android:id="@+id/profileYearInput"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="50"
@@ -103,12 +136,13 @@
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="2dp"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
         android:weightSum="100"
         android:layout_gravity="center"
-        android:layout_below="@id/nationality">
+        android:layout_below="@id/profileYear">
         <TextView
             android:id="@+id/profileContact"
             android:layout_width="fill_parent"
@@ -119,7 +153,7 @@
             android:gravity="center_vertical"
             android:textSize="18sp"
             android:textColor="@color/black"
-            android:enabled="false" />
+            android:clickable="false" />
         <EditText
             android:id="@+id/profileContactInput"
             android:inputType="number"
@@ -131,10 +165,77 @@
             android:enabled="false"
             android:maxLines="1" />
     </LinearLayout>
+    <LinearLayout
+        android:id="@+id/profileFieldOfStudy"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/contactNumber">
+        <TextView
+            android:id="@+id/profileFieldOfStudyText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:text="Field of Study"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:clickable="false" />
+        <Spinner
+            android:id="@+id/profileFieldOfStudyInput"
+            android:layout_below="@id/contactNumber"
+            android:background="@drawable/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:layout_height="fill_parent"
+            android:entries="@array/profile_field_study" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/profileInterest"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:weightSum="100"
+        android:layout_gravity="center"
+        android:layout_below="@id/profileFieldOfStudy">
+        <TextView
+            android:id="@+id/profileInterestText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:background="@drawable/edit_text_style"
+            android:text="Interest"
+            android:gravity="center_vertical"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:clickable="false" />
+        <Spinner
+            android:id="@+id/profileInterestInput"
+            android:layout_below="@id/contactNumber"
+            android:background="@drawable/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_weight="50"
+            android:layout_height="fill_parent"
+            android:spinnerMode="dialog"
+            android:entries="@array/profile_interests" />
+    </LinearLayout>
     <Button
         android:text="Edit"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/buttonBlue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/profileEditButton"
-        android:layout_below="@id/contactNumber" />
+        android:layout_below="@id/profileInterest" />
 </RelativeLayout>
