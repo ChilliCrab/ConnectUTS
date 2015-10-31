@@ -69,7 +69,7 @@ namespace ConnectUTS
 			view.FindViewById<TextView> (Resource.Id.accPriceSuburb).Text = "$" + listing.RentAWeek + "p.w. - " + listing.Suburb;
 			view.FindViewById<TextView> (Resource.Id.accAddress).Text = listing.Address;
 
-			string interestsString = "Matching Interests: ";
+			string interestsString = "Owner Interest: ";
 			//bool notFirstInterest = false;
 
 			//			foreach (string interest in user.Interest) 
@@ -84,14 +84,13 @@ namespace ConnectUTS
 			//				}
 			//			}
 
-//			if (user.Interest == mCurrentUser.Interest) {
-//				view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + user.Interest;
-//			} 
-//			else
-//			{
-//				view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + "None";
-//			}
-			view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + user.Interest;
+			if (user.Interest == mCurrentUser.Interest) {
+				view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + user.Interest + " Matched!";
+			} 
+			else
+			{
+				view.FindViewById<TextView> (Resource.Id.accInterests).Text = interestsString + user.Interest;
+			}
 			view.FindViewById<TextView> (Resource.Id.accDescription).Text = listing.Description;
 
 			return view;

@@ -2,9 +2,10 @@
 
 namespace ConnectUTS
 {
-	public class InterestList
+	public class DataList
 	{
 		public static string[] interests = {
+			"Select any...",
 			"Animals",
 			"Anime/Manga",
 			"Art",
@@ -21,6 +22,17 @@ namespace ConnectUTS
 			"Technology",
 			"Travel",
 			"TV"};
+		public static string[] fields = {
+			"Engineering",
+			"Information Technology",
+			"Business",
+			"Science",
+			"Communication",
+			"Education",
+			"Health",
+			"Law",
+			"Design",
+			"Architecture",};
 		
 	}
 }

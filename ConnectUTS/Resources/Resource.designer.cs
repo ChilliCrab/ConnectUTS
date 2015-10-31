@@ -80,6 +80,12 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f0c0001
 			public const int menu = 2131492865;
 			
+			// aapt resource value: 0x7f0c0003
+			public const int profile_field_study = 2131492867;
+			
+			// aapt resource value: 0x7f0c0002
+			public const int profile_interests = 2131492866;
+			
 			static Array()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -1454,8 +1460,8 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f0b0074
 			public const int action0 = 2131427444;
 			
-			// aapt resource value: 0x7f0b009b
-			public const int actionSearch = 2131427483;
+			// aapt resource value: 0x7f0b00a4
+			public const int actionSearch = 2131427492;
 			
 			// aapt resource value: 0x7f0b003e
 			public const int action_bar = 2131427390;
@@ -1514,8 +1520,8 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f0b0034
 			public const int buttonPanel = 2131427380;
 			
-			// aapt resource value: 0x7f0b0097
-			public const int cancelButton = 2131427479;
+			// aapt resource value: 0x7f0b00a0
+			public const int cancelButton = 2131427488;
 			
 			// aapt resource value: 0x7f0b0075
 			public const int cancel_action = 2131427445;
@@ -1529,8 +1535,8 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f0b001c
 			public const int collapseActionView = 2131427356;
 			
-			// aapt resource value: 0x7f0b008a
-			public const int contactNumber = 2131427466;
+			// aapt resource value: 0x7f0b008d
+			public const int contactNumber = 2131427469;
 			
 			// aapt resource value: 0x7f0b002f
 			public const int contentPanel = 2131427375;
@@ -1718,20 +1724,38 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f0b002b
 			public const int parentPanel = 2131427371;
 			
-			// aapt resource value: 0x7f0b008b
-			public const int profileContact = 2131427467;
+			// aapt resource value: 0x7f0b008e
+			public const int profileContact = 2131427470;
 			
-			// aapt resource value: 0x7f0b008c
-			public const int profileContactInput = 2131427468;
+			// aapt resource value: 0x7f0b008f
+			public const int profileContactInput = 2131427471;
 			
-			// aapt resource value: 0x7f0b008d
-			public const int profileEditButton = 2131427469;
+			// aapt resource value: 0x7f0b0096
+			public const int profileEditButton = 2131427478;
+			
+			// aapt resource value: 0x7f0b0090
+			public const int profileFieldOfStudy = 2131427472;
+			
+			// aapt resource value: 0x7f0b0092
+			public const int profileFieldOfStudyInput = 2131427474;
+			
+			// aapt resource value: 0x7f0b0091
+			public const int profileFieldOfStudyText = 2131427473;
 			
 			// aapt resource value: 0x7f0b0082
 			public const int profileId = 2131427458;
 			
 			// aapt resource value: 0x7f0b0083
 			public const int profileIdInput = 2131427459;
+			
+			// aapt resource value: 0x7f0b0093
+			public const int profileInterest = 2131427475;
+			
+			// aapt resource value: 0x7f0b0095
+			public const int profileInterestInput = 2131427477;
+			
+			// aapt resource value: 0x7f0b0094
+			public const int profileInterestText = 2131427476;
 			
 			// aapt resource value: 0x7f0b0085
 			public const int profileName = 2131427461;
@@ -1745,6 +1769,15 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f0b0089
 			public const int profileNationalityInput = 2131427465;
 			
+			// aapt resource value: 0x7f0b008a
+			public const int profileYear = 2131427466;
+			
+			// aapt resource value: 0x7f0b008c
+			public const int profileYearInput = 2131427468;
+			
+			// aapt resource value: 0x7f0b008b
+			public const int profileYearText = 2131427467;
+			
 			// aapt resource value: 0x7f0b0005
 			public const int progress_circular = 2131427333;
 			
@@ -1757,35 +1790,35 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f0b0038
 			public const int radio = 2131427384;
 			
-			// aapt resource value: 0x7f0b0096
-			public const int registerAccountButton = 2131427478;
+			// aapt resource value: 0x7f0b009f
+			public const int registerAccountButton = 2131427487;
 			
-			// aapt resource value: 0x7f0b0095
-			public const int registerAgreeTac = 2131427477;
+			// aapt resource value: 0x7f0b009e
+			public const int registerAgreeTac = 2131427486;
 			
 			// aapt resource value: 0x7f0b0070
 			public const int registerButton = 2131427440;
 			
-			// aapt resource value: 0x7f0b008e
-			public const int registerHeading = 2131427470;
+			// aapt resource value: 0x7f0b0097
+			public const int registerHeading = 2131427479;
 			
-			// aapt resource value: 0x7f0b0094
-			public const int registerInterest = 2131427476;
+			// aapt resource value: 0x7f0b009d
+			public const int registerInterest = 2131427485;
 			
-			// aapt resource value: 0x7f0b0093
-			public const int registerNationalityInput = 2131427475;
+			// aapt resource value: 0x7f0b009c
+			public const int registerNationalityInput = 2131427484;
 			
-			// aapt resource value: 0x7f0b0090
-			public const int registerPasswordInput = 2131427472;
+			// aapt resource value: 0x7f0b0099
+			public const int registerPasswordInput = 2131427481;
 			
-			// aapt resource value: 0x7f0b0091
-			public const int registerRePasswordInput = 2131427473;
+			// aapt resource value: 0x7f0b009a
+			public const int registerRePasswordInput = 2131427482;
 			
-			// aapt resource value: 0x7f0b008f
-			public const int registerStudentIDInput = 2131427471;
+			// aapt resource value: 0x7f0b0098
+			public const int registerStudentIDInput = 2131427480;
 			
-			// aapt resource value: 0x7f0b0092
-			public const int registerStudentNameInput = 2131427474;
+			// aapt resource value: 0x7f0b009b
+			public const int registerStudentNameInput = 2131427483;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int screen = 2131427348;
@@ -1892,14 +1925,14 @@ namespace ConnectUTS
 			// aapt resource value: 0x7f0b0012
 			public const int useLogo = 2131427346;
 			
-			// aapt resource value: 0x7f0b009a
-			public const int userInterests = 2131427482;
+			// aapt resource value: 0x7f0b00a3
+			public const int userInterests = 2131427491;
 			
-			// aapt resource value: 0x7f0b0098
-			public const int userName = 2131427480;
+			// aapt resource value: 0x7f0b00a1
+			public const int userName = 2131427489;
 			
-			// aapt resource value: 0x7f0b0099
-			public const int userNationality = 2131427481;
+			// aapt resource value: 0x7f0b00a2
+			public const int userNationality = 2131427490;
 			
 			// aapt resource value: 0x7f0b001f
 			public const int withText = 2131427359;
